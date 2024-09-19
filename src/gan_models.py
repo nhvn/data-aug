@@ -1,3 +1,4 @@
+# GENERATOR
 # src/gan_train.py
 
 import torch

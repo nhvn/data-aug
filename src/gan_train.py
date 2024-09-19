@@ -1,3 +1,4 @@
+# DISCRIMINATOR
 # src/gan_models.py
 
 import torch
