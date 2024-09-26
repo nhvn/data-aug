@@ -30,3 +30,5 @@
 2024-09-25T17:06:20,831 - /127.0.0.1:49906 "POST /predictions/gan_generator HTTP/1.1" 503 3
 2024-09-25T17:06:46,770 - /127.0.0.1:49908 "PUT /models/gan_generator?min_worker=1 HTTP/1.1" 202 6
 2024-09-25T17:07:04,314 - /127.0.0.1:49914 "GET /models/gan_generator HTTP/1.1" 200 1
+2024-09-25T17:41:21,325 - /127.0.0.1:50195 "POST /models?model_name=gan_generator&url=gan_generator.mar HTTP/1.1" 200 17
+2024-09-25T17:41:30,655 - /127.0.0.1:50197 "GET /models/gan_generator HTTP/1.1" 200 4

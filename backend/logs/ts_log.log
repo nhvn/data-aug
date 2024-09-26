@@ -1927,3 +1927,110 @@ java.lang.InterruptedException: null
 2024-09-25T17:13:14,217 [INFO ] W-9000-gan_generator_1.0-stdout org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-gan_generator_1.0-stdout
 2024-09-25T17:13:14,217 [INFO ] W-9000-gan_generator_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-gan_generator_1.0-stderr
 2024-09-25T17:13:14,217 [INFO ] W-9000-gan_generator_1.0-stderr org.pytorch.serve.wlm.WorkerLifeCycle - Stopped Scanner - W-9000-gan_generator_1.0-stderr
+2024-09-25T17:41:08,466 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager - Initializing plugins manager...
+2024-09-25T17:41:08,466 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager - Initializing plugins manager...
+2024-09-25T17:41:08,491 [INFO ] main org.pytorch.serve.metrics.configuration.MetricConfiguration - Successfully loaded metrics configuration from /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/ts/configs/metrics.yaml
+2024-09-25T17:41:08,491 [INFO ] main org.pytorch.serve.metrics.configuration.MetricConfiguration - Successfully loaded metrics configuration from /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/ts/configs/metrics.yaml
+2024-09-25T17:41:08,520 [INFO ] main org.pytorch.serve.ModelServer - 
+Torchserve version: 0.11.1
+TS Home: /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages
+Current directory: /Users/alannhan/Desktop/data-aug/backend
+Temp directory: /var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/
+Metrics config path: /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/ts/configs/metrics.yaml
+Number of GPUs: 0
+Number of CPUs: 8
+Max heap size: 4096 M
+Python executable: /Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11
+Config file: config.properties
+Inference address: http://127.0.0.1:8080
+Management address: http://127.0.0.1:8081
+Metrics address: http://127.0.0.1:8082
+Model Store: /Users/alannhan/Desktop/data-aug/backend/model_store
+Initial Models: N/A
+Log dir: /Users/alannhan/Desktop/data-aug/backend/logs
+Metrics dir: /Users/alannhan/Desktop/data-aug/backend/logs
+Netty threads: 32
+Netty client threads: 0
+Default workers per model: 8
+Blacklist Regex: N/A
+Maximum Response Size: 6553500
+Maximum Request Size: 6553500
+Limit Maximum Image Pixels: true
+Prefer direct buffer: false
+Allowed Urls: [http://127.0.0.1|file://.*]
+Custom python dependency for model allowed: false
+Enable metrics API: true
+Metrics mode: LOG
+Disable system metrics: false
+Workflow Store: /Users/alannhan/Desktop/data-aug/backend/model_store
+CPP log config: N/A
+Model config: N/A
+System metrics command: default
+Model API enabled: true
+2024-09-25T17:41:08,520 [INFO ] main org.pytorch.serve.ModelServer - 
+Torchserve version: 0.11.1
+TS Home: /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages
+Current directory: /Users/alannhan/Desktop/data-aug/backend
+Temp directory: /var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/
+Metrics config path: /Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/ts/configs/metrics.yaml
+Number of GPUs: 0
+Number of CPUs: 8
+Max heap size: 4096 M
+Python executable: /Library/Frameworks/Python.framework/Versions/3.11/bin/python3.11
+Config file: config.properties
+Inference address: http://127.0.0.1:8080
+Management address: http://127.0.0.1:8081
+Metrics address: http://127.0.0.1:8082
+Model Store: /Users/alannhan/Desktop/data-aug/backend/model_store
+Initial Models: N/A
+Log dir: /Users/alannhan/Desktop/data-aug/backend/logs
+Metrics dir: /Users/alannhan/Desktop/data-aug/backend/logs
+Netty threads: 32
+Netty client threads: 0
+Default workers per model: 8
+Blacklist Regex: N/A
+Maximum Response Size: 6553500
+Maximum Request Size: 6553500
+Limit Maximum Image Pixels: true
+Prefer direct buffer: false
+Allowed Urls: [http://127.0.0.1|file://.*]
+Custom python dependency for model allowed: false
+Enable metrics API: true
+Metrics mode: LOG
+Disable system metrics: false
+Workflow Store: /Users/alannhan/Desktop/data-aug/backend/model_store
+CPP log config: N/A
+Model config: N/A
+System metrics command: default
+Model API enabled: true
+2024-09-25T17:41:08,524 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager -  Loading snapshot serializer plugin...
+2024-09-25T17:41:08,524 [INFO ] main org.pytorch.serve.servingsdk.impl.PluginsManager -  Loading snapshot serializer plugin...
+2024-09-25T17:41:08,532 [INFO ] main org.pytorch.serve.ModelServer - Initialize Inference server with: NioServerSocketChannel.
+2024-09-25T17:41:08,532 [INFO ] main org.pytorch.serve.ModelServer - Initialize Inference server with: NioServerSocketChannel.
+2024-09-25T17:41:08,562 [INFO ] main org.pytorch.serve.ModelServer - Inference API bind to: http://127.0.0.1:8080
+2024-09-25T17:41:08,562 [INFO ] main org.pytorch.serve.ModelServer - Inference API bind to: http://127.0.0.1:8080
+2024-09-25T17:41:08,562 [INFO ] main org.pytorch.serve.ModelServer - Initialize Management server with: NioServerSocketChannel.
+2024-09-25T17:41:08,562 [INFO ] main org.pytorch.serve.ModelServer - Initialize Management server with: NioServerSocketChannel.
+2024-09-25T17:41:08,563 [INFO ] main org.pytorch.serve.ModelServer - Management API bind to: http://127.0.0.1:8081
+2024-09-25T17:41:08,563 [INFO ] main org.pytorch.serve.ModelServer - Management API bind to: http://127.0.0.1:8081
+2024-09-25T17:41:08,563 [INFO ] main org.pytorch.serve.ModelServer - Initialize Metrics server with: NioServerSocketChannel.
+2024-09-25T17:41:08,563 [INFO ] main org.pytorch.serve.ModelServer - Initialize Metrics server with: NioServerSocketChannel.
+2024-09-25T17:41:08,563 [INFO ] main org.pytorch.serve.ModelServer - Metrics API bind to: http://127.0.0.1:8082
+2024-09-25T17:41:08,563 [INFO ] main org.pytorch.serve.ModelServer - Metrics API bind to: http://127.0.0.1:8082
+2024-09-25T17:41:08,673 [INFO ] pool-3-thread-1 TS_METRICS - CPUUtilization.Percent:0.0|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311268
+2024-09-25T17:41:08,674 [INFO ] pool-3-thread-1 TS_METRICS - DiskAvailable.Gigabytes:240.62466049194336|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311268
+2024-09-25T17:41:08,674 [INFO ] pool-3-thread-1 TS_METRICS - DiskUsage.Gigabytes:9.936683654785156|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311268
+2024-09-25T17:41:08,674 [INFO ] pool-3-thread-1 TS_METRICS - DiskUtilization.Percent:4.0|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311268
+2024-09-25T17:41:08,674 [INFO ] pool-3-thread-1 TS_METRICS - MemoryAvailable.Megabytes:6026.5625|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311268
+2024-09-25T17:41:08,674 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUsed.Megabytes:7532.5625|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311268
+2024-09-25T17:41:08,675 [INFO ] pool-3-thread-1 TS_METRICS - MemoryUtilization.Percent:63.2|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311268
+2024-09-25T17:41:21,321 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelVersionedRefs - Adding new version 1.0 for model gan_generator
+2024-09-25T17:41:21,321 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelVersionedRefs - Adding new version 1.0 for model gan_generator
+2024-09-25T17:41:21,322 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelVersionedRefs - Setting default version to 1.0 for model gan_generator
+2024-09-25T17:41:21,322 [DEBUG] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelVersionedRefs - Setting default version to 1.0 for model gan_generator
+2024-09-25T17:41:21,322 [INFO ] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelManager - Model gan_generator loaded.
+2024-09-25T17:41:21,322 [INFO ] nioEventLoopGroup-3-1 org.pytorch.serve.wlm.ModelManager - Model gan_generator loaded.
+2024-09-25T17:41:21,325 [INFO ] nioEventLoopGroup-3-1 ACCESS_LOG - /127.0.0.1:50195 "POST /models?model_name=gan_generator&url=gan_generator.mar HTTP/1.1" 200 17
+2024-09-25T17:41:21,325 [INFO ] nioEventLoopGroup-3-1 TS_METRICS - Requests2XX.Count:1.0|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311281
+2024-09-25T17:41:30,655 [INFO ] nioEventLoopGroup-3-2 ACCESS_LOG - /127.0.0.1:50197 "GET /models/gan_generator HTTP/1.1" 200 4
+2024-09-25T17:41:30,656 [INFO ] nioEventLoopGroup-3-2 TS_METRICS - Requests2XX.Count:1.0|#Level:Host|#hostname:Alans-MacBook-Air.local,timestamp:1727311290
