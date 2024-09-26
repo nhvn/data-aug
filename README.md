@@ -61,7 +61,7 @@ Python 3.8+ with pip installed.
 - Steps
 
 1. Clone the repository:
-git clone https://github.com/YourUsername/GenerativeAI-DataAugmentation.git
+git clone https://github.com/nhvn/data-aug.git
 cd GenerativeAI-DataAugmentation
 
 2. Create and activate a virtual environment:
