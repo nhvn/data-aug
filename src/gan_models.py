@@ -14,27 +14,28 @@ class Generator(nn.Module):
             nn.ReLU(True),
             nn.Linear(512, 1024),
             nn.ReLU(True),
-            nn.Linear(1024, 28*28),  # Adjust for your dataset size (e.g., 28x28 for MNIST)
-            nn.Tanh()
+            nn.Linear(1024, 28*28),  # Output size for 28x28 images (e.g., MNIST)
+            nn.Tanh()  # Tanh ensures output values are in the range [-1, 1]
         )
 
     def forward(self, z):
-        return self.fc(z).view(-1, 1, 28, 28)  # Output size should match dataset image size (e.g., 28x28)
+        # Reshape the output to match the 28x28 image dimensions
+        return self.fc(z).view(-1, 1, 28, 28)
 
-
-# Define the Discriminator model
+# Define the Discriminator model (not needed for inference, but kept here for training)
 class Discriminator(nn.Module):
     def __init__(self):
         super(Discriminator, self).__init__()
         self.fc = nn.Sequential(
-            nn.Linear(28 * 28, 512),  # Input size must be 28*28 = 784
+            nn.Linear(28 * 28, 512),  # Input is flattened 28x28 image (784 pixels)
             nn.LeakyReLU(0.2, inplace=True),
             nn.Linear(512, 256),
             nn.LeakyReLU(0.2, inplace=True),
             nn.Linear(256, 1),
-            nn.Sigmoid()
+            nn.Sigmoid()  # Sigmoid to produce a probability (real/fake)
         )
 
     def forward(self, x):
-        x = x.view(x.size(0), -1)  # Flatten input image to (batch_size, 28*28)
+        # Flatten the input image (batch_size, 1, 28, 28) -> (batch_size, 28*28)
+        x = x.view(x.size(0), -1)
         return self.fc(x)

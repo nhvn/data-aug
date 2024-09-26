@@ -1,0 +1,468 @@
+2024-09-25T17:06:50,199 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:06:50,202 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:06:50,202 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4488
+2024-09-25T17:06:50,202 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:06:50,202 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:06:50,207 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:06:50,213 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:06:50,221 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:06:50,221 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:50,222 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:06:50,222 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:06:50,222 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:06:50,222 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:06:50,222 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:06:50,223 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:06:50,224 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:06:50,224 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:50,224 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:50,225 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:06:50,225 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:06:50,225 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:50,225 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:06:50,225 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:06:50,225 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:50,225 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:06:50,225 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:06:50,226 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:06:50,226 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:06:51,800 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:06:51,803 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:06:51,803 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4514
+2024-09-25T17:06:51,803 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:06:51,803 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:06:51,804 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:06:51,807 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:06:51,812 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:06:51,812 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:51,813 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:06:51,813 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:06:51,813 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:06:51,813 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:06:51,813 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:06:51,814 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:06:51,814 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:06:51,814 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:06:51,814 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:51,814 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:06:51,814 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:51,815 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:06:51,816 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:06:51,816 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:51,816 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:06:51,816 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:06:51,816 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:06:51,816 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:06:53,379 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:06:53,382 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:06:53,382 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4525
+2024-09-25T17:06:53,382 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:06:53,382 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:06:53,383 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:06:53,390 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:06:53,395 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:06:53,396 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:06:53,396 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:53,397 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:53,398 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:06:53,399 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:06:53,399 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:53,399 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:06:53,399 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:06:53,399 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:06:53,400 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:06:55,961 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:06:55,964 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:06:55,964 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4541
+2024-09-25T17:06:55,964 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:06:55,965 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:06:55,965 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:06:55,970 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:06:55,975 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:06:55,975 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:55,976 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:06:55,976 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:06:55,976 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:06:55,976 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:06:55,977 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:06:55,977 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:06:55,977 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:06:55,978 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:55,979 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:06:55,979 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:06:55,979 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:55,979 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:06:55,979 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:06:55,979 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:06:55,979 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:06:59,531 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:06:59,534 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:06:59,534 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4558
+2024-09-25T17:06:59,534 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:06:59,535 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:06:59,535 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:06:59,539 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:06:59,544 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:06:59,544 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:59,544 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:06:59,545 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:06:59,546 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:06:59,547 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:06:59,547 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:06:59,547 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:06:59,547 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:06:59,547 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:07:05,105 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:07:05,108 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:07:05,108 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4588
+2024-09-25T17:07:05,109 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:07:05,109 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:07:05,109 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:07:05,116 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:07:05,121 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:07:05,121 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:07:05,122 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:05,123 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:07:05,124 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:07:05,124 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:05,124 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:07:05,124 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:07:05,124 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:07:05,124 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:07:13,693 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:07:13,697 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:07:13,697 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4627
+2024-09-25T17:07:13,697 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:07:13,697 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:07:13,698 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:07:13,702 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:07:13,707 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:07:13,707 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:13,708 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:07:13,709 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:13,710 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:07:13,710 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:07:13,710 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:13,710 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:07:13,710 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:07:13,710 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:07:13,710 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:07:27,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:07:27,284 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:07:27,284 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4678
+2024-09-25T17:07:27,284 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:07:27,284 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:07:27,285 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:07:27,288 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:07:27,293 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:07:27,294 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:07:27,294 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:07:27,295 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:07:48,884 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:07:48,887 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:07:48,887 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4804
+2024-09-25T17:07:48,887 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:07:48,887 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:07:48,888 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:07:48,891 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:07:48,897 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:07:48,897 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:07:48,898 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:07:48,898 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:07:48,898 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:07:48,899 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:48,900 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:07:48,900 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:07:48,900 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:07:48,900 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:07:48,900 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:07:48,900 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:07:48,900 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:08:23,763 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:08:23,767 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:08:23,767 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]4927
+2024-09-25T17:08:23,767 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:08:23,767 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:08:23,768 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:08:23,771 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:08:23,785 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:08:23,785 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:08:23,786 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:08:23,787 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:09:19,458 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:09:19,461 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:09:19,461 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]5167
+2024-09-25T17:09:19,461 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:09:19,461 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:09:19,462 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:09:19,463 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:09:19,469 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:09:19,469 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:09:19,470 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:10:49,265 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:10:49,268 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:10:49,268 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]5554
+2024-09-25T17:10:49,268 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:10:49,268 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:10:49,269 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:10:49,270 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:10:49,280 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:10:49,280 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:10:49,281 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
+2024-09-25T17:13:14,192 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Listening on addr:port: 127.0.0.1:9000
+2024-09-25T17:13:14,195 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Successfully loaded /Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/configs/metrics.yaml.
+2024-09-25T17:13:14,195 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - [PID]6140
+2024-09-25T17:13:14,195 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Torch worker started.
+2024-09-25T17:13:14,195 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Python runtime: 3.11.3
+2024-09-25T17:13:14,196 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Connection accepted: ('127.0.0.1', 9000).
+2024-09-25T17:13:14,199 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - model_name: gan_generator, batchSize: 1
+2024-09-25T17:13:14,214 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG - /private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py:17: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+2024-09-25T17:13:14,214 [WARN ] W-9000-gan_generator_1.0-stderr MODEL_LOG -   self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Backend worker process died.
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - Traceback (most recent call last):
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 301, in <module>
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     worker.run_server()
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 268, in run_server
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.handle_connection(cl_socket)
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 196, in handle_connection
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service, result, code = self.load_model(msg)
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                             ^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_service_worker.py", line 133, in load_model
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     service = model_loader.load(
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -               ^^^^^^^^^^^^^^^^^^
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/ts/model_loader.py", line 143, in load
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     initialize_fn(service.context)
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/private/var/folders/q7/g6c6t09n7ll559g1csnkr59c0000gn/T/models/f5ab3b87dc71465985c3bcf147e8ccbf/gan_handler.py", line 17, in initialize
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     self.model.load_state_dict(torch.load(model_path, map_location=self.device))
+2024-09-25T17:13:14,215 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 1065, in load
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     with _open_file_like(f, 'rb') as opened_file:
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -          ^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 468, in _open_file_like
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     return _open_file(name_or_buffer, mode)
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -   File "/Users/alannhan/Desktop/data-aug/.venv/lib/python3.11/site-packages/torch/serialization.py", line 449, in __init__
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -     super().__init__(open(name, mode))
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG -                      ^^^^^^^^^^^^^^^^
+2024-09-25T17:13:14,216 [INFO ] W-9000-gan_generator_1.0-stdout MODEL_LOG - FileNotFoundError: [Errno 2] No such file or directory: '../outputs/models/generator_final.pt'
