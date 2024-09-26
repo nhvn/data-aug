@@ -34,7 +34,7 @@ Users can upload datasets (images, text, or tabular data) and augment them using
 
 ---
 
-## Project Structure
+<!-- ## Project Structure
 data-aug/
 ├── backend/                  # Backend API services and model logic (Flask)
 │   ├── app.py                # Main Flask application
@@ -49,7 +49,7 @@ data-aug/
 ├── README.md                 # Project documentation (this file)
 ├── requirements.txt          # Backend dependencies
 ├── config.properties         # TorchServe configuration file
-└── .gitignore                # Ignored files for Git
+└── .gitignore                # Ignored files for Git -->
 
 
 ## Installation
@@ -67,7 +67,7 @@ cd GenerativeAI-DataAugmentation
 2. Create and activate a virtual environment:
 python3 -m venv new_venv
 source new_venv/bin/activate
-# For Windows: new_venv\Scripts\activate
+- For Windows: new_venv\Scripts\activate
 
 3. Install the dependencies:
 pip install -r requirements.txt
@@ -75,7 +75,6 @@ pip install -r requirements.txt
 4. Set up NVIDIA AI Workbench:
 Follow the NVIDIA AI Workbench installation guide.
 Configure the environment for generative models (GANs, transformers, CTGAN).
-
 
 5. Start the backend server:
 python3 backend/app.py
@@ -97,12 +96,16 @@ CTGAN for tabular data augmentation. -->
 
 8. Download Augmented Data: The augmented dataset can be downloaded or accessed through an API for use in machine learning models.
 
+---
+
 ## NVIDIA AI Workbench Integration
 
 - Training: The core models (GAN, transformers, CTGAN) are trained with the help of NVIDIA AI Workbench, utilizing GPU acceleration to reduce training time and enhance performance.
 - Deployment: Once trained, the models are packaged and deployed using TorchServe for real-time inference.
 - Inference: The backend uses these models to process real-time requests for data augmentation and synthetic data generation.
 - Workflow Automation: NVIDIA AI Workbench facilitates workflow management, automating the process of retraining and redeploying models as new data becomes available, ensuring optimal productivity and scalability.
+
+---
 
 ## Example Workflow
 
@@ -123,7 +126,7 @@ A user uploads tabular data.
 The backend uses CTGAN (Conditional Tabular GAN) to generate new synthetic rows of data based on the uploaded dataset.
 The augmented dataset is provided for download. -->
 
-
+---
 
 ## Roadmap
 
