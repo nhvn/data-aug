@@ -1,55 +1,162 @@
 # Generative AI Data Augmentation Tool
-This project is designed to augment datasets using Generative AI models to boost the efficiency of machine learning workflows.
+
+This project provides a tool for augmenting datasets using **Generative AI** models to enhance machine learning workflows. By leveraging **NVIDIA AI Workbench**, it ensures efficient model training, management, and deployment, offering users the ability to generate synthetic data and apply various augmentation techniques.
+
+---
 
 ## Description
- Users can upload datasets and generate synthetic data using various augmentation techniques (e.g., for image, text, or tabular data). The project leverages NVIDIA AI Workbench for training, managing, and deploying models, ensuring scalability and high performance.
+
+Users can upload datasets (images, text, or tabular data) and augment them using generative models. The system uses pre-trained **Generative AI** models (like GANs, transformers, and CTGANs) to create synthetic data that can improve the performance of machine learning models. The integration with **NVIDIA AI Workbench** optimizes the workflow by utilizing GPU acceleration for fast and scalable model training and deployment.
+
+---
 
 ## Features
-- Upload Dataset: Users can upload datasets in image, text, or tabular format.
-- Data Augmentation: Various augmentation techniques (e.g., image transformations, synthetic text generation, tabular data augmentation) are available to enhance the dataset.
-- Synthetic Data Generation: Leverage pre-trained Generative AI models to create new synthetic data for the uploaded dataset.
-- Data Export: Augmented data can be downloaded or integrated into machine learning pipelines via API.
 
-## Planned Core Functionalities
-1. Dataset Upload: Support for image, text, and tabular data formats.
-2. Augmentation Type Selection: Options for different augmentation techniques based on data type.
-3. Synthetic Data Generation: Realistic synthetic data generated using AI models such as GANs for images, transformers for text, and CTGAN for tabular data.
-4. Integration with NVIDIA AI Workbench: Using Workbench for model training, deployment, and optimization.
+- **Upload Dataset**: Users can upload images, text, or tabular data for augmentation.
+- **Data Augmentation**: Apply various augmentation techniques (e.g., image transformations, synthetic text generation, and tabular data enhancement).
+- **Synthetic Data Generation**: Utilize pre-trained Generative AI models to generate realistic synthetic data.
+- **Data Export**: Augmented data can be downloaded or accessed via API for integration into machine learning pipelines.
 
-## Project structure
-- /frontend: Code for the web interface (likely built with React or Vue.js).
-- /backend: API services and logic to handle data preprocessing, augmentation, and synthetic data generation (Flask or FastAPI).
-- /models: Pre-trained generative models for each data type (GANs for images, transformers for text, CTGAN for tabular data).
-- /scripts: Utility scripts for setting up NVIDIA AI Workbench, managing dependencies, and running model training workflows.
+---
+
+## Core Functionalities
+
+1. **Dataset Upload**: Support for different data formats (image, text, and tabular).
+2. **Augmentation Selection**: Choose from various augmentation techniques based on the data type.
+3. **Synthetic Data Generation**: Realistic synthetic data generation using AI models such as:
+    - **GANs (Generative Adversarial Networks)** for image generation.
+    - **Transformers** for text data augmentation.
+    - **CTGAN** for tabular data synthesis.
+4. **Integration with NVIDIA AI Workbench**:
+    - **Model Training**: Utilize AI Workbench for accelerated training.
+    - **Deployment**: Seamless model deployment for real-time inference.
+    - **Workflow Automation**: Automated workflows for managing model pipelines.
+
+---
+
+## Project Structure
+
+```plaintext
+data-aug/
+├── backend/                  # Backend API services and model logic (Flask)
+│   ├── app.py                # Main Flask application
+│   ├── templates/            # HTML templates for the web interface
+│   ├── uploads/              # Folder for storing uploaded/augmented files
+│   ├── model_store/          # TorchServe models (.mar files)
+│   └── static/               # Static assets (CSS/JS if needed)
+├── frontend/                 # Frontend (React, Vue.js, or simple HTML/CSS)
+├── models/                   # Pre-trained generative models (GANs, transformers, CTGAN)
+├── scripts/                  # Utility scripts for NVIDIA AI Workbench, training, etc.
+├── new_venv/                 # Python virtual environment folder
+├── README.md                 # Project documentation (this file)
+├── requirements.txt          # Backend dependencies
+├── config.properties         # TorchServe configuration file
+└── .gitignore                # Ignored files for Git
+
 
 ## Installation
-Prerequisites:
-- NVIDIA AI Workbench installed and configured on your system.
-- Docker (optional, for containerized development).
-- Python 3.8+, with pip installed.
+Prerequisites
 
-- Clone the repository: 
-git clone https://github.com/YourUsername/GenerativeAI-DataAugmentation.git
+NVIDIA AI Workbench installed and configured.
+Docker (optional, for containerized development).
+Python 3.8+ with pip installed.
+
+Steps
+
+Clone the repository:
+bashCopygit clone https://github.com/YourUsername/GenerativeAI-DataAugmentation.git
 cd GenerativeAI-DataAugmentation
-- Create and activate a virtual environment:
-    - python3 -m venv venv
-    - source venv/bin/activate
-- Install dependencies:
-    - pip install -r requirements.txt
-- Set up NVIDIA AI Workbench:
-    1. Follow the NVIDIA AI Workbench installation guide.
-    2. Configure the project environment for your generative models (GANs, NLP, CTGAN).
 
-## Usage
-Once the project is set up, users will be able to:
-1. Upload their dataset via the web interface.
-2. elect augmentation options based on the data type.
-3. Generate and download synthetic data, or access it through an API.
+Create and activate a virtual environment:
+bashCopypython3 -m venv new_venv
+source new_venv/bin/activate
+# For Windows: new_venv\Scripts\activate
 
-## Roadmap
- - Basic functionality for image data augmentation (using simple transformations).
- - Integration with pre-trained GAN models for more complex image generation.
- - Support for text data augmentation using transformer models.
- - Augmentation for tabular data (CTGAN or similar models).
- - Frontend user interface for dataset upload and augmentation selection.
- - Final deployment using NVIDIA AI Workbench.
+Install the dependencies:
+bashCopypip install -r requirements.txt
+
+Set up NVIDIA AI Workbench:
+
+Follow the NVIDIA AI Workbench installation guide.
+Configure the environment for generative models (GANs, transformers, CTGAN).
+
+
+Start the backend server:
+bashCopypython3 backend/app.py
+
+Access the web interface:
+
+Open a browser and go to http://127.0.0.1:5000/upload-image to upload your dataset.
+
+
+
+Usage & NVIDIA AI Workbench Integration
+Once the project is set up:
+
+Upload Dataset: Users can upload datasets via the web interface (image, text, or tabular).
+Select Augmentation Options: Choose from various augmentation techniques based on the data type.
+Generate Synthetic Data: Synthetic data is generated using pre-trained AI models, such as:
+
+GANs (Generative Adversarial Networks) for image generation.
+Transformers for text data generation.
+CTGAN for tabular data augmentation.
+
+
+Download Augmented Data: The augmented dataset can be downloaded or accessed through an API for use in machine learning models.
+
+NVIDIA AI Workbench Integration
+
+Training: The core models (GAN, transformers, CTGAN) are trained with the help of NVIDIA AI Workbench, utilizing GPU acceleration to reduce training time and enhance performance.
+Deployment: Once trained, the models are packaged and deployed using TorchServe for real-time inference.
+Inference: The backend uses these models to process real-time requests for data augmentation and synthetic data generation.
+Workflow Automation: NVIDIA AI Workbench facilitates workflow management, automating the process of retraining and redeploying models as new data becomes available, ensuring optimal productivity and scalability.
+
+Example Workflow
+
+Image Augmentation:
+
+A user uploads an image via the web interface.
+The backend applies augmentations (like rotation, flipping, resizing) using the generative model.
+The augmented image is saved to the uploads folder and available for download.
+
+
+Text Augmentation:
+
+A user uploads a text dataset.
+The backend uses a pre-trained transformer model to generate synthetic text based on the input data.
+The augmented text is processed and returned to the user for download.
+
+
+Tabular Data Augmentation:
+
+A user uploads tabular data.
+The backend uses CTGAN (Conditional Tabular GAN) to generate new synthetic rows of data based on the uploaded dataset.
+The augmented dataset is provided for download.
+
+
+
+Roadmap
+
+Basic Functionality:
+
+Implement image augmentation (rotation, flipping, resizing) using pre-trained GAN models.
+Add support for text data augmentation using transformer models.
+Enable augmentation for tabular data using CTGAN.
+
+
+Frontend Enhancements:
+
+Build a more comprehensive user interface to support dataset uploads and augmentation selection.
+
+
+Advanced Features:
+
+Integrate more advanced augmentation techniques for all data types.
+Enable users to visualize and compare the original and augmented data.
+Automate model retraining workflows using NVIDIA AI Workbench.
+
+
+Deployment:
+
+Scale the backend to handle multiple users and datasets.
+Ensure seamless deployment using TorchServe integrated with NVIDIA AI Workbench for GPU-accelerated inference.
