@@ -1,25 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Augmentation - Image Upload</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="container">
-        <h1>Data Augmentation</h1>
-        <form action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
-            <div class="file-input-wrapper">
-                <button type="button" class="btn">Choose images</button>
-                <input type="file" name="files[]" accept="image/*" multiple required>
-            </div>
-            <p class="file-name"></p>
-            <button type="submit">Upload & Augment</button>
-        </form>
-        <p class="error-message"></p>
+{% extends "base.html" %}
+
+{% block title %}AugmentedAI - Upload{% endblock %}
+
+{% block content %}
+<div class="container coming-soon">
+    <h2>Upload Images for Augmentation</h2>
+    
+    <form action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
+        <div class="file-input-wrapper">
+            <button type="button" class="btn">Choose images</button>
+            <input type="file" name="files[]" accept="image/*" multiple required>
+        </div>
+        <p class="file-name"></p>
+        <button type="submit" class="cta-button">Upload & Augment</button>
+    </form>
+    <p class="error-message"></p>
+</div>
+
+<div class="container coming-soon">
+    <h2>Coming Soon</h2>
+    <div class="upcoming-features">
+        <div class="feature">
+            <h3>Text Augmentation</h3>
+            <p>Soon, you'll be able to augment textual data with powerful AI-driven techniques.</p>
+        </div>
+        <div class="feature">
+            <h3>Tabular Data Modification</h3>
+            <p>Enhance your tabular datasets with cutting-edge modification techniques, arriving soon.</p>
+        </div>
     </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
-</body>
-</html>
+</div>
+{% endblock %}

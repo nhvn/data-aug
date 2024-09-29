@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}AugmentAI - HackAI Challenge{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="full-width-banner">
+        <img src="{{ url_for('static', filename='images/hackaiBanner.png') }}" alt="HackAI Challenge Banner">
+    </div>
+    <h1>HackAI - Dell and NVIDIA Challenge 2024</h1>
+    <p>AugmentAI is participating in the prestigious HackAI - Dell and NVIDIA Challenge, a hackathon that invites developers and data scientists to build groundbreaking Generative AI projects using NVIDIA AI Workbench.</p>
+
+    <h2>Challenge Overview</h2>
+    <p>This hackathon is designed to showcase creativity in building Generative AI projects. Using NVIDIA AI Workbench, developers can train, test, and deploy models efficiently. The hackathon focuses on pushing the boundaries of generative AI to impact various industries.</p>
+
+    <h2>What We Built</h2>
+    <p>For HackAI, we developed <strong>AugmentAI</strong>, a platform that enables data augmentation and synthetic image generation. We leverage advanced Generative Adversarial Networks (GANs) and NVIDIA AI Workbench’s GPU acceleration to enhance data for machine learning workflows.</p>
+
+    <h2>Our Inspiration</h2>
+    <p>Inspired by the challenges of collecting large datasets and ensuring model generalization, we designed AugmentAI to help users improve their machine learning models with augmented and synthetic data.</p>
+
+    <h2>Key Features</h2>
+    <ul>
+        <li><strong>Data Augmentation:</strong> Users can upload their datasets and augment them using various transformations.</li>
+        <li><strong>Synthetic Data Generation:</strong> GAN-powered synthetic image generation to enrich datasets.</li>
+        <li><strong>NVIDIA AI Workbench Integration:</strong> Efficient model training and deployment with GPU acceleration and streamlined workflows.</li>
+    </ul>
+
+    <h2>HackAI Details</h2>
+    <p>The hackathon includes a $70,176 prize pool, with categories such as Generative AI, Enterprise Data Analysis, and Computer Vision. The challenge will conclude on <strong>October 2, 2024</strong>. You can view the details and submit your projects <a href="https://devpost.com" target="_blank">here</a>.</p>
+
+    <!-- <a href="{{ url_for('home') }}" class="cta-button">Go to Home Page</a> -->
+</div>
+
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}AugmentAI - Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to AugmentAI</h1>
+    <p>AugmentAI is an advanced platform designed to enhance datasets using data augmentation and synthetic image generation techniques. Whether you're building machine learning models or need more diverse data, AugmentAI helps you scale efficiently.</p>
+
+    <h2>What is Data Augmentation?</h2>
+    <p>Data augmentation involves artificially creating new data from existing data, helping to increase the size and diversity of datasets. This is crucial for improving machine learning models' accuracy and performance.</p>
+
+    <h2>Why Augment Your Data?</h2>
+    <ul>
+        <li><strong>Boost Model Performance:</strong> Train your models with richer datasets to enhance generalization and avoid overfitting.</li>
+        <li><strong>Save Time and Resources:</strong> Reduce the need for collecting large amounts of new data by generating synthetic variations of your current data.</li>
+        <li><strong>Preserve Data Privacy:</strong> Use synthetic data to protect sensitive information while retaining the essential patterns and characteristics of the original data.</li>
+    </ul>
+
+    <h2>Applications</h2>
+    <p>Data augmentation and synthetic generation are used across various industries, including:</p>
+    <ul>
+        <li>Healthcare: Augment medical images to improve diagnostic accuracy.</li>
+        <li>Finance: Generate synthetic data for fraud detection and risk analysis.</li>
+        <li>Retail: Enhance product recognition with diverse image datasets.</li>
+        <li>Manufacturing: Improve defect detection with augmented images of products.</li>
+    </ul>
+
+    <a href="{{ url_for('upload_image') }}" class="cta-button">Start Augmenting</a>
+</div>
+{% endblock %}

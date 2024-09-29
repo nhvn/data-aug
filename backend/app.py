@@ -13,7 +13,6 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 os.makedirs(AUGMENTED_FOLDER, exist_ok=True)
 
 def augment_image(img):
-    # Perform basic augmentations (you can add more sophisticated augmentations here)
     augmentations = [
         lambda x: x.rotate(random.randint(-30, 30)),
         lambda x: x.transpose(Image.FLIP_LEFT_RIGHT),
@@ -22,9 +21,16 @@ def augment_image(img):
     return random.choice(augmentations)(img)
 
 @app.route('/')
-@app.route('/upload-image')
-def upload_image_page():
-    return render_template('upload.html')
+def home():
+    return render_template('home.html')
+
+@app.route('/hackathon')
+def hackathon_page():
+    return render_template('hackathon.html')
+
+@app.route('/about')
+def about_page():
+    return render_template('about.html')
 
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_image():
@@ -46,7 +52,6 @@ def upload_image():
             filepath = os.path.join(UPLOAD_FOLDER, filename)
             file.save(filepath)
 
-            # Open the image and apply augmentations
             img = Image.open(filepath)
             augmented_img = augment_image(img)
             augmented_filename = f"augmented_{filename}"
@@ -54,7 +59,6 @@ def upload_image():
             augmented_img.save(augmented_filepath)
             augmented_files.append(augmented_filepath)
 
-    # Create a ZIP file containing all augmented images
     memory_file = io.BytesIO()
     with zipfile.ZipFile(memory_file, 'w') as zf:
         for file in augmented_files:
