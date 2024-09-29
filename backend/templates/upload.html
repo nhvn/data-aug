@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Image</title>
+    <title>Data Augmentation - Image Upload</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Upload an Image for Data Augmentation</h1>
-    <form action="/upload" method="POST" enctype="multipart/form-data">
-        <input type="file" name="file" accept="image/*" required>
-        <br><br>
-        <input type="submit" value="Upload Image">
-    </form>
+    <div class="container">
+        <h1>Data Augmentation</h1>
+        <form action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
+            <div class="file-input-wrapper">
+                <button type="button" class="btn">Choose images</button>
+                <input type="file" name="files[]" accept="image/*" multiple required>
+            </div>
+            <p class="file-name"></p>
+            <button type="submit">Upload & Augment</button>
+        </form>
+        <p class="error-message"></p>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
