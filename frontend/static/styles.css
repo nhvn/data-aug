@@ -214,6 +214,47 @@ h3 {
     color: var(--secondary-color);
 }
 
+.file-drop-area {
+    border: 2px dashed #3498db;
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+}
+
+.file-drop-area p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+}
+
+.file-drop-area:hover {
+    background-color: #ecf0f1;
+}
+
+.file-input-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.file-input-btn:hover {
+    background-color: #2980b9;
+}
+
+#drop-area.dragging {
+    background-color: #ecf0f1;
+    border-color: #2980b9;
+}
+
+
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
