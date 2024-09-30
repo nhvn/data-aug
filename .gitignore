@@ -56,3 +56,9 @@ cover/
 # Workbench Project Layout
 data/scratch/*
 !data/scratch/.gitkeep
+
+# Ignore datasets
+/data/
+
+# Ignore the outputs folder
+outputs/
