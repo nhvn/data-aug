@@ -36,12 +36,12 @@ def about_page():
 def upload_image():
     if request.method == 'GET':
         return render_template('upload.html')
-    
+
     if 'files[]' not in request.files:
         return jsonify({"error": "No file part"}), 400
-    
+
     files = request.files.getlist('files[]')
-    
+
     if not files or files[0].filename == '':
         return jsonify({"error": "No selected file"}), 400
 
@@ -50,14 +50,16 @@ def upload_image():
         if file and file.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
             filename = file.filename
             filepath = os.path.join(UPLOAD_FOLDER, filename)
-            file.save(filepath)
-
-            img = Image.open(filepath)
-            augmented_img = augment_image(img)
-            augmented_filename = f"augmented_{filename}"
-            augmented_filepath = os.path.join(AUGMENTED_FOLDER, augmented_filename)
-            augmented_img.save(augmented_filepath)
-            augmented_files.append(augmented_filepath)
+            try:
+                file.save(filepath)
+                img = Image.open(filepath)
+                augmented_img = augment_image(img)
+                augmented_filename = f"augmented_{filename}"
+                augmented_filepath = os.path.join(AUGMENTED_FOLDER, augmented_filename)
+                augmented_img.save(augmented_filepath)
+                augmented_files.append(augmented_filepath)
+            except Exception as e:
+                return jsonify({"error": str(e)}), 500
 
     memory_file = io.BytesIO()
     with zipfile.ZipFile(memory_file, 'w') as zf:

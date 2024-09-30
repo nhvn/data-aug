@@ -33,7 +33,7 @@ transform = transforms.Compose([
 ])
 
 # Load the dataset
-dataset_path = '../data/your_dataset_folder'
+dataset_path = 'backend/data/images'
 dataset = datasets.ImageFolder(root=dataset_path, transform=transform)
 
 # Check if dataset is loaded
@@ -57,10 +57,13 @@ criterion = nn.BCELoss()
 def generate_noise(batch_size, z_dim):
     return torch.randn(batch_size, z_dim).to(device)
 
-# Create output directory for generated images and models if they don't exist
-output_image_dir = '../outputs/generated_images'
-output_model_dir = '../outputs/models'
-os.makedirs(output_image_dir, exist_ok=True)
+# Get the absolute path of the directory containing this script
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Create absolute paths for the outputs directories
+output_image_dir = os.path.join(script_dir, '../outputs/generated_images')
+output_model_dir = os.path.join(script_dir, '../outputs/models')
+os.makedirs(output_image_dir, exist_ok=True) # Create the directories if they don't exist
 os.makedirs(output_model_dir, exist_ok=True)
 
 # Training Loop
