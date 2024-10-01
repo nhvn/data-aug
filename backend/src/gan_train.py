@@ -1,13 +1,32 @@
-# src/gan_train.py
-
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from torch.utils.data import DataLoader
-from torchvision import datasets, transforms
+from torch.utils.data import DataLoader, Dataset
+from torchvision import transforms
 from gan_models import Generator, Discriminator
 import os
 import matplotlib.pyplot as plt
+from pathlib import Path
+from PIL import Image
+
+# Custom dataset class
+class ImageDataset(Dataset):
+    def __init__(self, root_dir, transform=None):
+        self.root_dir = Path(root_dir)
+        self.transform = transform
+        self.image_files = [f for f in self.root_dir.iterdir() if f.suffix.lower() in ['.png', '.jpg', '.jpeg']]
+
+    def __len__(self):
+        return len(self.image_files)
+
+    def __getitem__(self, idx):
+        img_path = self.image_files[idx]
+        image = Image.open(img_path).convert('RGB')
+        
+        if self.transform:
+            image = self.transform(image)
+        
+        return image, 0  # 0 is a dummy label
 
 # Hyperparameters
 z_dim = 100
@@ -33,12 +52,13 @@ transform = transforms.Compose([
 ])
 
 # Load the dataset
-dataset_path = 'backend/data/images'
-dataset = datasets.ImageFolder(root=dataset_path, transform=transform)
+script_path = Path(__file__).resolve()
+dataset_path = script_path.parent.parent.parent / 'data'
+dataset = ImageDataset(root_dir=dataset_path, transform=transform)
 
 # Check if dataset is loaded
 if len(dataset) == 0:
-    raise ValueError("No images found in dataset folder. Please check the path.")
+    raise ValueError(f"No images found in dataset folder. Please check the path: {dataset_path}")
 
 dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
 
@@ -57,14 +77,11 @@ criterion = nn.BCELoss()
 def generate_noise(batch_size, z_dim):
     return torch.randn(batch_size, z_dim).to(device)
 
-# Get the absolute path of the directory containing this script
-script_dir = os.path.dirname(os.path.abspath(__file__))
-
 # Create absolute paths for the outputs directories
-output_image_dir = os.path.join(script_dir, '../outputs/generated_images')
-output_model_dir = os.path.join(script_dir, '../outputs/models')
-os.makedirs(output_image_dir, exist_ok=True) # Create the directories if they don't exist
-os.makedirs(output_model_dir, exist_ok=True)
+output_image_dir = script_path.parent.parent / 'outputs' / 'generated_images'
+output_model_dir = script_path.parent.parent / 'outputs' / 'models'
+output_image_dir.mkdir(parents=True, exist_ok=True)
+output_model_dir.mkdir(parents=True, exist_ok=True)
 
 # Training Loop
 for epoch in range(epochs):
@@ -113,16 +130,16 @@ for epoch in range(epochs):
     if epoch % save_interval == 0:
         # Save generated image
         fake_img = fake_images[0].detach().cpu().numpy().reshape(28, 28)
-        save_image_path = f'{output_image_dir}/epoch_{epoch}.png'
+        save_image_path = output_image_dir / f'epoch_{epoch}.png'
         plt.imsave(save_image_path, fake_img, cmap='gray')
         print(f"Generated image saved to {save_image_path}")
         
         # Save model
-        model_save_path = f'{output_model_dir}/generator_epoch_{epoch}.pt'
+        model_save_path = output_model_dir / f'generator_epoch_{epoch}.pt'
         torch.save(generator.state_dict(), model_save_path)
         print(f"Generator model saved to {model_save_path}")
 
 # Save final model after training is complete
-torch.save(generator.state_dict(), f'{output_model_dir}/generator_final.pt')
-torch.save(discriminator.state_dict(), f'{output_model_dir}/discriminator_final.pt')
+torch.save(generator.state_dict(), output_model_dir / 'generator_final.pt')
+torch.save(discriminator.state_dict(), output_model_dir / 'discriminator_final.pt')
 print("Final models saved.")

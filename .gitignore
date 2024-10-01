@@ -59,6 +59,3 @@ data/scratch/*
 
 # Ignore datasets
 /data/
-
-# Ignore the outputs folder
-outputs/
