@@ -9,3 +9,4 @@ Werkzeug==3.0.4
 torch==2.0.0  # Or the latest stable version of torch
 torchvision==0.15.0  # Or the latest stable version of torchvision
 matplotlib==3.7.1
+jupyterlab>=3.0
