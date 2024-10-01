@@ -1,3 +1,5 @@
+# gan_train.py
+
 import torch
 import torch.optim as optim
 import torch.nn as nn
@@ -8,6 +10,8 @@ import os
 import matplotlib.pyplot as plt
 from pathlib import Path
 from PIL import Image
+import numpy as np
+
 
 # Custom dataset class
 class ImageDataset(Dataset):
@@ -41,14 +45,9 @@ print(f"Using device: {device}")
 
 # Define augmentations
 transform = transforms.Compose([
-    transforms.Resize((28, 28)),  # Resize to the target size
-    transforms.Grayscale(),  # Convert to grayscale
-    transforms.RandomHorizontalFlip(),  # Randomly flip images horizontally
-    transforms.RandomRotation(10),  # Randomly rotate images by up to 10 degrees
-    transforms.RandomResizedCrop(size=28, scale=(0.8, 1.0)),  # Crop and resize
-    transforms.ColorJitter(brightness=0.2, contrast=0.2),  # Adjust brightness and contrast
-    transforms.ToTensor(),
-    transforms.Normalize([0.5], [0.5])  # Normalize to [-1, 1]
+    transforms.Resize((64, 64)),  # Resize to 64x64
+    transforms.ToTensor(),  # Convert to tensor
+    transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])  # Normalize to [-1, 1] for RGB channels
 ])
 
 # Load the dataset
@@ -129,7 +128,14 @@ for epoch in range(epochs):
     # Save generated images and model every 'save_interval' epochs
     if epoch % save_interval == 0:
         # Save generated image
-        fake_img = fake_images[0].detach().cpu().numpy().reshape(28, 28)
+        # Unnormalize the image
+        fake_img = fake_images[0].detach().cpu()
+        fake_img = (fake_img * 0.5) + 0.5  # Inverse of normalization ([-1, 1] -> [0, 1])
+        fake_img = fake_img.numpy().transpose(1, 2, 0)  # Convert from (C, H, W) to (H, W, C)
+
+        # Clip the values to be in the range [0, 1]
+        fake_img = np.clip(fake_img, 0, 1)
+
         save_image_path = output_image_dir / f'epoch_{epoch}.png'
         plt.imsave(save_image_path, fake_img, cmap='gray')
         print(f"Generated image saved to {save_image_path}")

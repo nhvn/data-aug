@@ -7,7 +7,7 @@
     <h2>Upload Images for Augmentation</h2>
 
     <div id="drop-area" class="file-drop-area">
-        <form class="file-upload-form" action="{{ url_for('upload_image') }}" method="post" enctype="multipart/form-data">
+        <form class="file-upload-form" action="{{ url_for('generate_image') }}" method="post" enctype="multipart/form-data">
             <p>Drag and drop files here or</p>
             <input type="file" id="fileElem" name="files[]" accept="image/*" multiple hidden>
             <label class="file-input-btn" for="fileElem">Choose files</label>

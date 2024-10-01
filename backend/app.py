@@ -1,6 +1,6 @@
 import sys
 import os
-from flask import Flask, request, send_file, jsonify
+from flask import Flask, request, send_file, jsonify, render_template
 import io
 import zipfile
 from PIL import Image
@@ -30,6 +30,13 @@ def hackathon_page():
 def about_page():
     return render_template('about.html')
 
+@app.route('/upload', methods=['GET', 'POST'])
+def upload_image():
+    if request.method == 'POST':
+        # Handle image upload (use the code you already have for generating images)
+        return redirect(url_for('generate_image'))  # Redirect to generate the augmented images
+    return render_template('upload.html')  # Render upload form
+
 @app.route('/generate', methods=['POST'])
 def generate_image():
     if 'files[]' not in request.files:
@@ -41,18 +48,23 @@ def generate_image():
         return jsonify({"error": "No selected file"}), 400
     
     generated_images = []
-    for _ in files:  # We don't need the uploaded file, just generate based on the count
-        try:
-            # Generate a new image using the GAN
-            generated_image_bytes = gan_handler.handle(None, None)
-            generated_images.append(generated_image_bytes)
-        except Exception as e:
-            return jsonify({"error": str(e)}), 500
+    
+    for file in files:
+        if file and file.filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+            try:
+                # Open the uploaded image
+                uploaded_image = Image.open(file)
+                
+                # Generate a new image based on the uploaded image
+                generated_image_bytes = gan_handler.generate_from_image(uploaded_image)  # This should now be bytes
+                generated_images.append(generated_image_bytes)
+            except Exception as e:
+                return jsonify({"error": str(e)}), 500
     
     if len(generated_images) == 1:
         # If only one image, send it directly
         return send_file(
-            io.BytesIO(generated_images[0]),
+            io.BytesIO(generated_images[0]),  # Flask expects a bytes-like object here
             mimetype='image/png',
             as_attachment=True,
             download_name='generated_image.png'
