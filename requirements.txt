@@ -6,7 +6,8 @@ Jinja2==3.1.4
 MarkupSafe==2.1.5
 pillow==10.4.0
 Werkzeug==3.0.4
-torch>=2.2.0  # Latest stable version of torch
-torchvision>=0.17.0  # Use a compatible version of torchvision
+torch>=2.2.0#Lateststableversionoftorch
+torchvision>=0.17.0#Useacompatibleversionoftorchvision
 matplotlib==3.7.1
 # jupyterlab>=3.0
+jupyterlab>3.0
