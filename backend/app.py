@@ -1,24 +1,22 @@
-from flask import Flask, request, render_template, jsonify, send_file
-from PIL import Image
+import sys
 import os
+from flask import Flask, request, send_file, jsonify
 import io
 import zipfile
-import random
+from PIL import Image
+
+# Add the src directory to the Python path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+src_dir = os.path.join(current_dir, 'src')
+sys.path.append(src_dir)
+
+from gan_handler import GANHandler
 
 app = Flask(__name__, static_folder='../frontend/static', template_folder='templates')
 
-UPLOAD_FOLDER = 'uploads'
-AUGMENTED_FOLDER = 'augmented'
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-os.makedirs(AUGMENTED_FOLDER, exist_ok=True)
-
-def augment_image(img):
-    augmentations = [
-        lambda x: x.rotate(random.randint(-30, 30)),
-        lambda x: x.transpose(Image.FLIP_LEFT_RIGHT),
-        lambda x: x.transpose(Image.FLIP_TOP_BOTTOM),
-    ]
-    return random.choice(augmentations)(img)
+# Initialize the GAN Handler
+gan_handler = GANHandler()
+gan_handler.initialize(None)  # Pass None as context for now
 
 @app.route('/')
 def home():
@@ -32,47 +30,47 @@ def hackathon_page():
 def about_page():
     return render_template('about.html')
 
-@app.route('/upload', methods=['GET', 'POST'])
-def upload_image():
-    if request.method == 'GET':
-        return render_template('upload.html')
-
+@app.route('/generate', methods=['POST'])
+def generate_image():
     if 'files[]' not in request.files:
         return jsonify({"error": "No file part"}), 400
-
+    
     files = request.files.getlist('files[]')
-
+    
     if not files or files[0].filename == '':
         return jsonify({"error": "No selected file"}), 400
-
-    augmented_files = []
-    for file in files:
-        if file and file.filename.lower().endswith(('.png', '.jpg', '.jpeg', '.gif')):
-            filename = file.filename
-            filepath = os.path.join(UPLOAD_FOLDER, filename)
-            try:
-                file.save(filepath)
-                img = Image.open(filepath)
-                augmented_img = augment_image(img)
-                augmented_filename = f"augmented_{filename}"
-                augmented_filepath = os.path.join(AUGMENTED_FOLDER, augmented_filename)
-                augmented_img.save(augmented_filepath)
-                augmented_files.append(augmented_filepath)
-            except Exception as e:
-                return jsonify({"error": str(e)}), 500
-
-    memory_file = io.BytesIO()
-    with zipfile.ZipFile(memory_file, 'w') as zf:
-        for file in augmented_files:
-            zf.write(file, os.path.basename(file))
-    memory_file.seek(0)
-
-    return send_file(
-        memory_file,
-        mimetype='application/zip',
-        as_attachment=True,
-        download_name='augmented_images.zip'
-    )
+    
+    generated_images = []
+    for _ in files:  # We don't need the uploaded file, just generate based on the count
+        try:
+            # Generate a new image using the GAN
+            generated_image_bytes = gan_handler.handle(None, None)
+            generated_images.append(generated_image_bytes)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+    
+    if len(generated_images) == 1:
+        # If only one image, send it directly
+        return send_file(
+            io.BytesIO(generated_images[0]),
+            mimetype='image/png',
+            as_attachment=True,
+            download_name='generated_image.png'
+        )
+    else:
+        # If multiple images, create a zip file
+        memory_file = io.BytesIO()
+        with zipfile.ZipFile(memory_file, 'w') as zf:
+            for i, img_bytes in enumerate(generated_images):
+                zf.writestr(f'generated_image_{i+1}.png', img_bytes)
+        memory_file.seek(0)
+        
+        return send_file(
+            memory_file,
+            mimetype='application/zip',
+            as_attachment=True,
+            download_name='generated_images.zip'
+        )
 
 if __name__ == '__main__':
     app.run(debug=True)
