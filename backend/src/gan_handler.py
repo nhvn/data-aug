@@ -40,8 +40,13 @@ class GANHandler:
         self.generator = Generator(self.z_dim, self.channels, self.img_size).to(self.device)
         self.encoder = Encoder(self.img_size, self.channels, self.z_dim).to(self.device)
 
-        # Load generator model weights
-        model_path = '/Users/alannhan/Desktop/data-aug/backend/outputs/models/generator_final.pt'  # Modify this path if needed
+        # Get the current directory of the script and navigate two levels up to the root of the project
+        current_dir = os.path.dirname(__file__)
+        root_dir = os.path.abspath(os.path.join(current_dir, '..', '..'))  # Go two levels up from src
+
+        # Construct the model path relative to the root directory
+        model_path = os.path.join(root_dir, 'backend', 'outputs', 'models', 'generator_final.pt')
+
         print("Attempting to load model from:", model_path)
         
         if not os.path.exists(model_path):
