@@ -58,7 +58,7 @@ NVIDIA AI Workbench installed and configured.
 Docker (optional, for containerized development).
 Python 3.8+ with pip installed.
 
-- Steps
+Steps
 
 1. Clone the repository:
 git clone https://github.com/nhvn/data-aug.git
