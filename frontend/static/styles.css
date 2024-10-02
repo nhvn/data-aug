@@ -254,6 +254,16 @@ h3 {
     border-color: #2980b9;
 }
 
+.hidden {
+    display: none;
+}
+
+#statusMessage {
+    font-size: 1.2rem;
+    color: green; /* Make it stand out */
+    margin-top: 10px;
+}
+
 
 @media (max-width: 768px) {
     .container {

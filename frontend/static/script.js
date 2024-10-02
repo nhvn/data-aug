@@ -5,16 +5,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorMessage = document.querySelector(".error-message");
     const dropArea = document.getElementById('drop-area');
 
-    // Handle file selection via input
-    fileInput.addEventListener("change", function (event) {
-        if (event.target.files.length > 0) {
-            displayFileNames(event.target.files);
-        } else {
-            fileName.textContent = "";
-        }
+    // Prevent default behaviors on the whole document for drag-and-drop
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        document.addEventListener(eventName, preventDefaults, false);
     });
 
-    // Prevent default behaviors for drag-and-drop events
+    // Also prevent default behaviors in the drop area
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
         dropArea.addEventListener(eventName, preventDefaults, false);
     });

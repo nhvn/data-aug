@@ -176,6 +176,14 @@ Due to hardware limitations, the current version of AugmentAI has been developed
 
 ---
 
+## Known Issues
+
+- Unable to upload both folder or a single image (it's one or the other and currently it only supports folder)
+- Dragging images/folders into the drop box doesn't work
+- After uploading files for augmentation, there's no indication that suggest theres a file uploaded already
+
+---
+
 ## Roadmap
 
 - Basic Functionality:
@@ -219,7 +227,7 @@ To test AugmentAI, please follow these steps:
 5. Open a web browser and navigate to http://localhost:5000/upload
 
 6. Test the image augmentation:
-- Upload an image (or a small set of images 5-10) through the web interface
+- Upload a folder (or a small set of images 3-5) through the web interface (currently don't support single picture upload as seen in demo)
 - Click 'Augment'
 - Check the download folder in the browser for generated images
 
