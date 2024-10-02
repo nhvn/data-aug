@@ -72,15 +72,15 @@ source new_venv/bin/activate
 3. Install the dependencies:
 pip install -r requirements.txt
 
-4. Set up NVIDIA AI Workbench:
-Follow the NVIDIA AI Workbench installation guide.
+4. Configure NVIDIA AI Workbench:
+Follow the NVIDIA AI Workbench installation guide below.
 Configure the environment for generative models (GANs, transformers, CTGAN).
 
 5. Start the backend server:
 python3 backend/app.py
 
 6. Access the web interface:
-Open a browser and go to http://127.0.0.1:5000/upload-image to upload your dataset.
+Open a browser and go to http://127.0.0.1:5000/ to upload your dataset (or an image for demonstration purposes).
 
 7. Usage & NVIDIA AI Workbench Integration
 Once the project is set up:
@@ -94,7 +94,7 @@ Generate Synthetic Data: Synthetic data is generated using pre-trained AI models
 CTGAN for tabular data augmentation. -->
 
 
-8. Download Augmented Data: The augmented dataset can be downloaded or accessed through an API for use in machine learning models.
+8. Download Augmented Data: The augmented dataset can be downloaded through the browser.
 
 ---
 
@@ -104,6 +104,48 @@ CTGAN for tabular data augmentation. -->
 - Deployment: Once trained, the models are packaged and deployed using TorchServe for real-time inference.
 - Inference: The backend uses these models to process real-time requests for data augmentation and synthetic data generation.
 - Workflow Automation: NVIDIA AI Workbench facilitates workflow management, automating the process of retraining and redeploying models as new data becomes available, ensuring optimal productivity and scalability.
+
+---
+
+## How to Work with NVIDIA AI Workbench
+
+Prerequisites
+- Install NVIDIA AI Workbench by following the official installation guide.
+- Ensure you have access to a system with a compatible NVIDIA GPU.
+
+Setting Up NVIDIA AI Workbench for This Project
+1. Clone the Repository:
+git clone https://github.com/nhvn/data-aug.git
+cd GenerativeAI-DataAugmentation
+
+2. Create and Activate a Virtual Environment:
+python3 -m venv new_venv
+source new_venv/bin/activate
+# On Windows, use: new_venv\Scripts\activate
+
+3. Install Project Dependencies:
+pip install -r requirements.txt
+
+4. Configure NVIDIA AI Workbench:
+To run your project using NVIDIA AI Workbench, configure the workbench environment by setting up the necessary models (GANs, transformers, CTGAN) within the Workbench platform.
+- In your NVIDIA AI Workbench instance, create a new project.
+- Upload the project files from this repository.
+- Make sure to configure the Workbench environment with GPU resources to accelerate model training.
+
+5. Run Training with NVIDIA AI Workbench:
+Execute model training using GPU acceleration:
+- Within the NVIDIA AI Workbench, navigate to your project’s directory and select the GAN, Transformer, or CTGAN model you want to train.
+- Start the training process by selecting the appropriate model configuration and allocating GPU resources.
+
+6. Deploy the Trained Model with TorchServe:
+- Package the trained model into a .mar file.
+- Start TorchServe to handle real-time inference using the trained model.
+torchserve --start --model-store model_store --models my_model.mar
+
+7. Inference and Workflow Automation:
+
+The backend Flask API will automatically make use of the trained models for augmentation tasks.
+Users can upload datasets via the web interface, and NVIDIA AI Workbench facilitates workflow automation to streamline retraining and redeploying models as new data is introduced.
 
 ---
 
