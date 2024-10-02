@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
     const fileInput = document.querySelector("input[type='file']");
@@ -62,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         if (fileInput.files.length === 0) {
             event.preventDefault();
-            errorMessage.textContent = "Please select or drop at least one image to upload!";
+            errorMessage.textContent = "Please select or drop at least one file to upload!";
         } else {
             errorMessage.textContent = "";
         }
