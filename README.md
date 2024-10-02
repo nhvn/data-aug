@@ -194,3 +194,6 @@ Tabular Data Augmentation: Planned integration with CTGAN will enable synthetic 
 - Deployment:
 Scale the backend to handle multiple users and datasets.
 Ensure seamless deployment using TorchServe integrated with NVIDIA AI Workbench for GPU-accelerated inference.
+
+## Blog Post
+Read the full blog post [here](./blogpost.md).
