@@ -206,9 +206,9 @@ To test AugmentAI, please follow these steps:
 - cd data-aug
 
 2. Create and activate a virtual environment:
-- python3 -m venv new_venv
-- source new_venv/bin/activate
-- For Windows: new_venv\Scripts\activate
+- python3 -m venv venv 
+- For Mac: source venv/bin/activate
+- For Windows: venv\Scripts\activate
 
 3. Install the dependencies:
 - pip install -r requirements.txt
