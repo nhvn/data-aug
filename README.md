@@ -128,6 +128,12 @@ The augmented dataset is provided for download. -->
 
 ---
 
+## Acknowledged Limitations
+
+Due to hardware limitations, the current version of AugmentAI has been developed and demonstrated using CPU resources, which impacts training time and overall model performance. However, the project is designed to fully support GPU acceleration through NVIDIA AI Workbench.
+
+---
+
 ## Roadmap
 
 - Basic Functionality:
@@ -138,10 +144,10 @@ Enable augmentation for tabular data using CTGAN.
 - Frontend Enhancements:
 Build a more comprehensive user interface to support dataset uploads and augmentation selection.
 
-- Advanced Features:
-Integrate more advanced augmentation techniques for all data types.
-Enable users to visualize and compare the original and augmented data.
-Automate model retraining workflows using NVIDIA AI Workbench.
+- Planned Improvements:
+Advanced Augmentation Techniques: AugmentAI will continue to evolve by integrating more advanced techniques to offer users greater control over the augmentation process.
+Text Data Augmentation: Future updates will introduce synthetic text generation using transformer models to augment text datasets, enhancing machine learning workflows for natural language processing tasks.
+Tabular Data Augmentation: Planned integration with CTGAN will enable synthetic tabular data generation, useful for tasks like predictive modeling and data imbalance correction.
 
 - Deployment:
 Scale the backend to handle multiple users and datasets.
