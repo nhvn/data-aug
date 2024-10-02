@@ -62,7 +62,7 @@ Steps
 
 1. Clone the repository:
 git clone https://github.com/nhvn/data-aug.git
-cd GenerativeAI-DataAugmentation
+cd data-aug
 
 2. Create and activate a virtual environment:
 python3 -m venv new_venv
@@ -195,5 +195,38 @@ Tabular Data Augmentation: Planned integration with CTGAN will enable synthetic 
 Scale the backend to handle multiple users and datasets.
 Ensure seamless deployment using TorchServe integrated with NVIDIA AI Workbench for GPU-accelerated inference.
 
+---
+
+## Testing Instructions
+
+To test AugmentAI, please follow these steps: 
+
+1. Clone the repository:
+- git clone https://github.com/nhvn/data-aug.git
+cd data-aug
+
+2. Create and activate a virtual environment:
+- python3 -m venv new_venv
+- source new_venv/bin/activate
+- For Windows: new_venv\Scripts\activate
+
+3. Install the dependencies:
+- pip install -r requirements.txt
+
+4. Start the backend server:
+- python3 backend/app.py
+
+5. Open a web browser and navigate to http://localhost:5000/upload
+
+6. Test the image augmentation:
+- Upload an image (or a small set of images 5-10) through the web interface
+- Click 'Augment'
+- Check the download folder in the browser for generated images
+
+If you're a judge and don't have access, please reach out.
+ 
+---
+
 ## Blog Post
+
 Read the full blog post [here](./blogpost.md).
