@@ -203,7 +203,7 @@ To test AugmentAI, please follow these steps:
 
 1. Clone the repository:
 - git clone https://github.com/nhvn/data-aug.git
-cd data-aug
+- cd data-aug
 
 2. Create and activate a virtual environment:
 - python3 -m venv new_venv
