@@ -65,7 +65,7 @@ git clone https://github.com/nhvn/data-aug.git
 cd data-aug
 
 2. Create and activate a virtual environment:
-python3 -m venv new_venv
+python3 -m venv venv 
 source new_venv/bin/activate
 - For Windows: new_venv\Scripts\activate
 
@@ -119,7 +119,7 @@ git clone https://github.com/nhvn/data-aug.git
 cd GenerativeAI-DataAugmentation
 
 2. Create and Activate a Virtual Environment:
-python3 -m venv new_venv
+python3 -m venv venv 
 source new_venv/bin/activate
 # On Windows, use: new_venv\Scripts\activate
 
@@ -210,19 +210,19 @@ Ensure seamless deployment using TorchServe integrated with NVIDIA AI Workbench 
 To test AugmentAI, please follow these steps: 
 
 1. Clone the repository:
-- git clone https://github.com/nhvn/data-aug.git
-- cd data-aug
+git clone https://github.com/nhvn/data-aug.git
+cd data-aug
 
 2. Create and activate a virtual environment:
-- python3 -m venv venv 
-- For Mac: source venv/bin/activate
-- For Windows: venv\Scripts\activate
+python3 -m venv venv 
+For Mac: source venv/bin/activate
+For Windows: venv\Scripts\activate
 
 3. Install the dependencies:
-- pip install -r requirements.txt
+pip install -r requirements.txt
 
 4. Start the backend server:
-- python3 backend/app.py
+python3 backend/app.py
 
 5. Open a web browser and navigate to http://localhost:5000/upload
 
