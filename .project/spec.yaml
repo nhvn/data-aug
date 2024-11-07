@@ -87,7 +87,23 @@ environment:
       name: ""
       target: ""
 execution:
-  apps: []
+  apps:
+  - name: AugmentAI
+    type: custom
+    class: webapp
+    start_command: cd /project && PROXY_PREFIX=$PROXY_PREFIX python3 backend/app.py
+    health_check_command: curl -f "http://localhost:5000/health"
+    stop_command: pkill -f '^python3 backend/app.py'
+    user_msg: ""
+    logfile_path: ""
+    timeout_seconds: 30
+    icon_url: ""
+    webapp_options:
+      autolaunch: true
+      port: "5000"
+      proxy:
+        trim_prefix: true
+      url: http://localhost:5000/
   resources:
     gpu:
       requested: 0

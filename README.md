@@ -34,23 +34,6 @@ Users can upload datasets (images, text, or tabular data) and augment them using
 
 ---
 
-<!-- ## Project Structure
-data-aug/
-├── backend/                  # Backend API services and model logic (Flask)
-│   ├── app.py                # Main Flask application
-│   ├── templates/            # HTML templates for the web interface
-│   ├── uploads/              # Folder for storing uploaded/augmented files
-│   ├── model_store/          # TorchServe models (.mar files)
-│   └── static/               # Static assets (CSS/JS if needed)
-├── frontend/                 # Frontend (React, Vue.js, or simple HTML/CSS)
-├── models/                   # Pre-trained generative models (GANs, transformers, CTGAN)
-├── scripts/                  # Utility scripts for NVIDIA AI Workbench, training, etc.
-├── new_venv/                 # Python virtual environment folder
-├── README.md                 # Project documentation (this file)
-├── requirements.txt          # Backend dependencies
-├── config.properties         # TorchServe configuration file
-└── .gitignore                # Ignored files for Git -->
-
 
 ## Installation
 - Prerequisites
