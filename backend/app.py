@@ -135,7 +135,8 @@ def generate_image():
         if file and file.filename.lower().endswith(('.png', '.jpg', '.jpeg')):
             try:
                 uploaded_image = Image.open(file)
-                generated_image_bytes = image_handler.generate_image(uploaded_image)
+                # In your app.py, update this line:
+                generated_image_bytes = image_handler.generate_from_image(uploaded_image)  # Changed from generate_image
                 generated_images.append(generated_image_bytes)
             except Exception as e:
                 return jsonify({"error": str(e)}), 500

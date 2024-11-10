@@ -12,13 +12,13 @@ environment:
     PYTHONUNBUFFERED: "1"
 apps:
   AugmentAI:
-    command: ["python3", "backend/app.py"]  # Simplified command
+    command: ["python3", "backend/app.py"]
     port: 5000
     env:
       - PYTHONPATH
       - FLASK_ENV
       - PYTHONUNBUFFERED
-      - STABILITY_API_KEY
+      - STABILITY_API_KEY 
     env_file: variables.env
     mount_workspace: true
     url_routes:
