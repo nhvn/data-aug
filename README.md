@@ -37,15 +37,32 @@ data-aug/
 │   └── spec.yaml
 └── README.md -->
 
-## Prerequisites
+## System Requirements
 
-- NVIDIA AI Workbench installed and configured
-- Docker Desktop running
-- Git installed
+### Hardware Requirements
+- NVIDIA GPU with CUDA support
+- Minimum 8GB RAM
+- 20GB free disk space
 
----
+### Software Requirements
+- NVIDIA AI Workbench (version 0.53.27 or higher)
+- Docker Desktop (version 4.24.0 or higher)
+- NVIDIA GPU Driver (version 535 or higher)
+- Operating System:
+  - Windows 11/10 with WSL2
+  - Ubuntu 20.04 or higher
+  - macOS 12.0 or higher
 
-## Installation & Setup
+### Environment Variables
+The following environment variables are configured in spec.yaml:
+```yaml
+environment:
+  variables:
+    PYTHONPATH: /project
+    FLASK_ENV: development
+    PYTHONUNBUFFERED: "1"
+
+## Running in AI Workbench
 
 1. Clone the repository:
    ```bash
@@ -87,6 +104,31 @@ data-aug/
 5. Download the augmented images
 
 ---
+
+## Image Generation Approaches
+
+This project implements two approaches for image generation:
+
+### 1. Local GAN Implementation
+- Custom GAN model for image augmentation
+- Trained on a 'natures' dataset from Kaggle to demonstrate ML concepts
+- Suitable for development and testing
+- CPU-based inference for accessibility
+
+### 2. API Integration (Stability AI)
+- High-quality image generation
+- 512x512 pixel output
+- Production-ready results
+- Faster inference times
+
+### Configuration
+The system can switch between approaches:
+```python
+# Use API (high quality)
+image_handler = ImageHandler(use_api=True)
+
+# Use local GAN (demonstration)
+image_handler = ImageHandler(use_api=False)
 
 ## Known Limitations
 

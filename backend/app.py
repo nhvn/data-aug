@@ -5,6 +5,7 @@ from flask import Flask, request, send_file, jsonify, render_template, url_for, 
 import io
 import zipfile
 from PIL import Image
+from src.image_handler import ImageHandler
 
 # Force Python to flush prints immediately
 import sys
@@ -115,6 +116,9 @@ def upload_image():
         return redirect(url_for('generate_image', _external=True))
     return render_template('upload.html')
 
+# Initialize handler
+image_handler = ImageHandler(use_api=True)  # Set to False for GAN
+
 @app.route('/generate', methods=['POST'])
 def generate_image():
     if 'files[]' not in request.files:
@@ -131,7 +135,7 @@ def generate_image():
         if file and file.filename.lower().endswith(('.png', '.jpg', '.jpeg')):
             try:
                 uploaded_image = Image.open(file)
-                generated_image_bytes = gan_handler.generate_from_image(uploaded_image)
+                generated_image_bytes = image_handler.generate_image(uploaded_image)
                 generated_images.append(generated_image_bytes)
             except Exception as e:
                 return jsonify({"error": str(e)}), 500

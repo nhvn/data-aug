@@ -11,3 +11,4 @@ torchvision>=0.17.0
 matplotlib==3.7.1
 numpy<2
 jupyterlab>3.0
+stability-sdk

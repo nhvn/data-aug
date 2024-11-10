@@ -1,6 +1,6 @@
 import os
 import torch
-from gan_models import Generator
+from .gan_models import Generator
 from torchvision import transforms
 from PIL import Image
 import io

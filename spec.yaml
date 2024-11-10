@@ -5,22 +5,25 @@ build:
 environment:
   setup:
     - pip install -r requirements.txt
+    - pip install stability-sdk  # Add this line
   variables:
     PYTHONPATH: /project
     FLASK_ENV: development
     PYTHONUNBUFFERED: "1"
 apps:
   AugmentAI:
-    command: ["bash", "-c", "cd /project && python3 backend/app.py"]
+    command: ["python3", "backend/app.py"]  # Simplified command
     port: 5000
     env:
       - PYTHONPATH
       - FLASK_ENV
       - PYTHONUNBUFFERED
+      - STABILITY_API_KEY
+    env_file: variables.env
     mount_workspace: true
     url_routes:
       - route: "/projects/data-aug/applications/AugmentAI"
-        rewrite: "/" 
+        rewrite: "/"
     health_check:
       command: ["curl", "-f", "http://localhost:5000/health"]
       interval: 10s
