@@ -96,7 +96,7 @@ def custom_static(filename):
 def health():
     return jsonify({"status": "healthy"}), 200
 
-# Routes
+# Keep the routes simple
 @app.route('/')
 def home():
     return render_template('home.html')

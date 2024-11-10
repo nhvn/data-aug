@@ -4,28 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}AugmentedAI{% endblock %}</title>
-    <link rel="icon" href="{{ url_for('custom_static', filename='images/aug-logo.png', _external=True, _scheme='http') }}" type="image/x-icon">
+    <link rel="icon" href="/projects/data-aug/applications/AugmentAI/static/images/aug-logo.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('custom_static', filename='styles.css', _external=True, _scheme='http') }}">
+    <link rel="stylesheet" href="/projects/data-aug/applications/AugmentAI/static/styles.css">
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <a href="{{ url_for('home', _external=True, _scheme='http') }}" class="logo">
-                <img src="{{ url_for('custom_static', filename='images/logoWord.png', _external=True, _scheme='http') }}" alt="AugmentedAI Logo">
+            <a href="/projects/data-aug/applications/AugmentAI/" class="logo">
+                <img src="/projects/data-aug/applications/AugmentAI/static/images/logoWord.png" alt="AugmentedAI Logo">
             </a>
             <ul class="nav-links">
-                <li><a href="{{ url_for('home', _external=True, _scheme='http') }}">Home</a></li>
-                <li><a href="{{ url_for('about_page', _external=True, _scheme='http') }}">About</a></li>
-                <li><a href="{{ url_for('hackathon_page', _external=True, _scheme='http') }}">Hackathon</a></li>
-                <li><a href="{{ url_for('upload_image', _external=True, _scheme='http') }}">Start Augmenting</a></li>
+                <li><a href="/projects/data-aug/applications/AugmentAI/">Home</a></li>
+                <!-- <li><a href="/projects/data-aug/applications/AugmentAI/about">About</a></li> -->
+                <!-- <li><a href="/projects/data-aug/applications/AugmentAI/hackathon">Hackathon</a></li> -->
+                <li><a href="/projects/data-aug/applications/AugmentAI/upload">Augment</a></li>
             </ul>
         </div>
     </nav>
     <main>
         {% block content %}{% endblock %}
     </main>
-    <script src="{{ url_for('custom_static', filename='js/script.js', _external=True, _scheme='http') }}"></script>
+    <script src="/projects/data-aug/applications/AugmentAI/static/js/script.js"></script>
 </body>
 </html>
-``

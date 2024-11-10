@@ -20,7 +20,7 @@ apps:
     mount_workspace: true
     url_routes:
       - route: "/projects/data-aug/applications/AugmentAI"
-        rewrite: "/"
+        rewrite: "/" 
     health_check:
       command: ["curl", "-f", "http://localhost:5000/health"]
       interval: 10s
