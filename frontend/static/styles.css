@@ -30,9 +30,13 @@ body::before {
     z-index: -1;
 }
 
+.nav-container,
+.container {
+    max-width: 1000px; /* Ensures consistent width for nav and container */
+    margin: 0 auto;    /* Centers both nav and container */
+}
+
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,7 +70,6 @@ nav {
 }
 
 .container {
-    max-width: 1000px;
     margin: 2rem auto;
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.9);
@@ -89,12 +92,44 @@ h3 {
     margin-bottom: 1rem;
 }
 
+.background-container {
+    /* Inherit general container styles */
+    position: relative;
+    background-image: url('/projects/data-aug/applications/AugmentAI/static/images/introbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff; /* Ensure text is readable */
+    border-radius: 8px; /* Optional: matches container styling */
+    height: 35em;
+}
+
+/* Ensure text and other elements appear on top of the background image */
+.background-container h1,
+.background-container h2,
+.background-container .cta-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Optional: add overlay effect */
+.background-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+    z-index: 0;
+    border-radius: inherit;
+}
+
 /* Custom H1 Styling */
 .custom-h1 {
     text-align: left;
     font-size: 4rem; /* Larger font size */
     font-weight: 700;  /* Bold */
-    color: #333333;    /* Dark color for emphasis */
+    color: white;
     margin-bottom: 1.5rem; /* Spacing below */
 }
 
@@ -102,8 +137,10 @@ h3 {
 .custom-h2 {
     font-size: 24px; /* Smaller than H1 */
     font-weight: 400;   /* Regular weight */
-    color: #666666;     /* Subtle color */
+    color: white;
     margin-bottom: 1.5rem; /* More spacing below */
+    max-width: 50%; /* Adjust to your preference */
+    line-height: 1.5; /* Improves readability */
 }
 
 .cta-container {
@@ -244,7 +281,7 @@ h3 {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    /* text-align: center; */
     background-color: rgba(255, 255, 255, 0.9);
 }
 
@@ -273,6 +310,32 @@ h3 {
 .feature p {
     font-size: 1rem;
     color: var(--text-color);
+}
+/* Flex container for features */
+.features-grid {
+    display: flex;
+    gap: 1rem; /* Space between each feature box */
+    flex-wrap: nowrap; /* Allows wrapping to new lines on smaller screens */
+    margin-top: 1rem;
+    justify-content: space-between;
+}
+
+/* Styling each feature-box for consistent layout */
+.feature-box {
+    background-color: #f8f9fa; /* Light background */
+    color: #333333;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    flex: 1 1 300px; /* Allows each box to grow/shrink with min width */
+    max-width: 300px; /* Sets a maximum width for balanced layout */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .features-grid {
+        flex-direction: column; /* Stacks feature boxes vertically on small screens */
+    }
 }
 
 .full-width-banner img {
@@ -356,6 +419,40 @@ h3 {
     font-size: 1.2rem;
     color: green; /* Make it stand out */
     margin-top: 10px;
+}
+
+.upload-limits {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.upload-limits h3 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.upload-limits ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+.upload-limits li {
+    margin: 0.5rem 0;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.upload-limits li:before {
+    content: "✓";
+    color: #4CAF50;
+    margin-right: 0.5rem;
+    font-weight: bold;
 }
 
 

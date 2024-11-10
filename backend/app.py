@@ -125,6 +125,10 @@ def generate_image():
         return jsonify({"error": "No file part"}), 400
     
     files = request.files.getlist('files[]')
+    MAX_FILES = 10
+    
+    if len(files) > MAX_FILES:
+        return jsonify({"error": f"Maximum {MAX_FILES} files allowed"}), 400
     
     if not files or files[0].filename == '':
         return jsonify({"error": "No selected file"}), 400
