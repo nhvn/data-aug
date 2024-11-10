@@ -48,9 +48,9 @@ data-aug/
 ## Installation & Setup
 
 1. Clone the repository:
-- ```bash
-- git clone https://github.com/nhvn/data-aug.git
-- cd data-aug
+   ```bash
+   git clone https://github.com/yourusername/data-aug.git
+   cd data-aug
 
 2. Open in NVIDIA AI Workbench:
 - Launch NVIDIA AI Workbench
