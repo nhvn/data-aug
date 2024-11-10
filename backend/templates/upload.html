@@ -1,13 +1,10 @@
 {% extends "base.html" %}
-
 {% block title %}AugmentedAI - Upload{% endblock %}
-
 {% block content %}
 <div class="container">
     <h2>Upload Images for Augmentation</h2>
-
     <div id="drop-area" class="file-drop-area">
-        <form class="file-upload-form" action="{{ url_for('generate_image') }}" method="post" enctype="multipart/form-data">
+        <form action="/projects/data-aug/applications/AugmentAI/generate" method="post" enctype="multipart/form-data">
             <p>Drag and drop files here or</p>
             <input type="file" id="fileElem" name="files[]" accept="image/*" multiple webkitdirectory hidden>
             <label class="file-input-btn" for="fileElem">Choose files or a folder</label>
@@ -18,18 +15,20 @@
     </div>
     <p class="error-message"></p>
 </div>
-
-<div class="container coming-soon">
-    <h2>Coming Soon</h2>
-    <div class="upcoming-features">
-        <div class="feature">
-            <h3>Text Augmentation</h3>
-            <p>Soon, you'll be able to augment textual data with powerful AI-driven techniques.</p>
-        </div>
-        <div class="feature">
-            <h3>Tabular Data Modification</h3>
-            <p>Enhance your tabular datasets with cutting-edge modification techniques, arriving soon.</p>
+    <div class="container coming-soon">
+        <h2>Potential Features Coming Soon</h2>
+        <div class="upcoming-features">
+            <div class="feature">
+                <h3>Text Augmentation</h3>
+                <p>Soon, you'll be able to augment textual data with powerful AI-driven techniques.</p>
+            </div>
+            <div class="feature">
+                <h3>Tabular Data Modification</h3>
+                <p>Enhance your tabular datasets with cutting-edge modification techniques, arriving soon.</p>
+            </div>
         </div>
     </div>
+</div>
+
 </div>
 {% endblock %}

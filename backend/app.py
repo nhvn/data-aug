@@ -113,7 +113,7 @@ def hackathon_page():
 @app.route('/upload', methods=['GET', 'POST'])
 def upload_image():
     if request.method == 'POST':
-        return redirect(url_for('generate_image', _external=True))
+        return redirect(url_for('generate_image', _external=True, _scheme='http'))
     return render_template('upload.html')
 
 # Initialize handler

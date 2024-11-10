@@ -250,9 +250,8 @@ h3 {
 
 .upcoming-features {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: space-between; /* Creates space between the two boxes */
+    gap: 1rem; /* Optional: space between boxes */
 }
 
 .feature {
@@ -260,8 +259,8 @@ h3 {
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    width: 100%;
+    flex: 1; /* Each box takes up equal space */
+    max-width: 48%; /* Each box takes about half the container width */
     text-align: left;
 }
 
@@ -366,11 +365,10 @@ h3 {
     }
 
     .upcoming-features {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; /* Stacks boxes vertically on smaller screens */
     }
 
     .feature {
-        max-width: 100%;
+        max-width: 100%; /* Each box takes full width on smaller screens */
     }
 }
