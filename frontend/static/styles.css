@@ -86,10 +86,9 @@ h1 {
 }
 
 h3 {
-    color: var(--primary-color);
-    font-weight: 400;
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
 .background-container {
@@ -292,7 +291,7 @@ h3 {
 }
 
 .feature {
-    background-color: white;
+    background-color: #f8f9fa;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -302,9 +301,9 @@ h3 {
 }
 
 .feature h3 {
-    color: var(--secondary-color);
-    font-size: 1.4rem;
+    color: #333;
     margin-bottom: 0.5rem;
+    font-size: 1.1rem;
 }
 
 .feature p {
