@@ -6,9 +6,9 @@ This project provides an image augmentation tool using **Generative AI** models,
 ## Table of Contents
 - [Description](#description)
 - [Features](#features)
-- [Image Generation Approaches](#image-generation-approaches)
-  - [Primary Service (Stability AI API)](#1-primary-service-stability-ai-api)
-  - [Fallback Service (Local GAN)](#2-fallback-service-local-gan)
+- [Environment Setup](#environment-setup)
+  - [Required Environment Variables](#required-environment-variables)
+  - [Service Levels](#service-levels)
 - [Installation & Setup](#installation--setup)
   - [Prerequisites](#prerequisites)
   - [Steps](#steps)
@@ -48,21 +48,22 @@ AugmentAI allows users to upload image datasets and augment them using generativ
 
 ---
 
-## Image Generation Approaches
+## Environment Setup
 
-This project implements two approaches for image generation:
+### Required Environment Variables
+- `STABILITY_API_KEY`: Required for high-quality image generation. (A demonstration key is included in the project configuration)
 
-### 1. Primary Service (Stability AI API)
-- High-quality image generation
-- Maintains original image dimensions
-- Production-ready results
-- Faster inference times
+### Service Levels
+- **Primary Service**: Uses Stability AI API
+  - Requires valid API key and available credits
+  - Produces high-quality images at original dimensions
+  - Faster processing time
 
-### 2. Fallback Service (Local GAN)
-- Custom GAN model trained on nature dataset
-- 64x64 pixel output
-- CPU-based inference
-- Automatically activated if API is unavailable
+- **Fallback Service**: Uses Local GAN
+  - Activates automatically if API is unavailable
+  - Produces 64x64 pixel images
+  - Limited to nature-style variations
+  - No API key required
 
 ---
 
