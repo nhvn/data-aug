@@ -3,23 +3,21 @@
 {% block content %}
 <div class="container">
     <h2>Upload Images for Augmentation</h2>
-
     <div id="drop-area" class="file-drop-area">
         <form action="/projects/data-aug/applications/AugmentAI/generate" method="post" enctype="multipart/form-data">
-            <p>Drag and drop files here or</p>
+            <p>Drag and drop files or folder here or</p>
             <input type="file" id="fileElem" name="files[]" accept="image/png, image/jpeg, image/jpg" multiple webkitdirectory hidden>
-            <label class="file-input-btn" for="fileElem">Choose files or a folder</label>
+            <label class="cta-button" for="fileElem">Choose Folder</label>
             <p class="file-name"></p>
             <p id="statusMessage" class="hidden"></p>
-            <button type="submit" class="cta-button">Augment</button>
+            <button type="submit" class="cta-button" style="display: none;">Augment</button>
         </form>
     </div>
-
     <div class="upload-limits">
         <h3>Upload Guidelines</h3>
         <ul>
             <li>Supported formats: PNG, JPG, JPEG</li>
-            <li>Maximum 10 files per folder upload</li>
+            <li>Maximum 10 files per upload</li>
             <li>Maximum total upload size: 16MB combined</li>
             <li>Maximum image dimensions: 1024x1024 pixels (larger images will be automatically resized)</li>
         </ul>

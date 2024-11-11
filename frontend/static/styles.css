@@ -99,7 +99,7 @@ h3 {
     background-position: center;
     color: #fff; /* Ensure text is readable */
     border-radius: 8px; /* Optional: matches container styling */
-    height: 35em;
+    height: 30em;
 }
 
 /* Ensure text and other elements appear on top of the background image */
@@ -143,8 +143,8 @@ h3 {
 }
 
 .cta-container {
-    display: flex;
-    flex-direction: column; /* Stacks the buttons vertically */
+    /* display: flex; */
+    /* flex-direction: column;  */
     align-items: flex-start; /* Aligns buttons to the left */
 }
 
@@ -156,15 +156,35 @@ h3 {
     font-weight: 500;
     transition: background-color 0.3s ease;
     margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 .cta-button {
-    background-color: var(--primary-color);
-    color: #ffffff;
+    background-color: var(--primary-color);  /* Or your preferred color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 0;
 }
 
 .cta-button:hover {
-    background-color: #1b6fa0;
+    background-color: #1b6fa0;  /* Slightly darker shade for hover */
+}
+
+.cta-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Remove any previous file-input-btn styles that might conflict */
+.file-input-btn {
+    display: none;
 }
 
 .cta-button2 {
