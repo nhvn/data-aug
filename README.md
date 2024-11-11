@@ -58,7 +58,7 @@ This project implements two approaches for image generation:
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/data-aug.git
+   git clone https://github.com/nhvn/data-aug.git
    cd data-aug
 
 2. Open in NVIDIA AI Workbench:
