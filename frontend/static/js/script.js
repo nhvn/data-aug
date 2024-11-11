@@ -212,10 +212,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Show loading overlay before form submission
             loadingOverlay.classList.remove('hidden');
 
-            // Hide loading overlay after 10 seconds
+            // Hide loading overlay after 30 seconds
             setTimeout(() => {
                 loadingOverlay.classList.add('hidden');
-            }, 10000);
+            }, 30000);
         });
     }
 

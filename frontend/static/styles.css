@@ -98,7 +98,7 @@ h3 {
     background-size: cover;
     background-position: center;
     color: #fff; /* Ensure text is readable */
-    border-radius: 8px; /* Optional: matches container styling */
+    border-radius: 8px; 
     height: 30em;
 }
 
@@ -160,7 +160,7 @@ h3 {
 }
 
 .cta-button {
-    background-color: var(--primary-color);  /* Or your preferred color */
+    background-color: var(--primary-color);
     color: white;
     padding: 10px 20px;
     border: none;
@@ -174,7 +174,7 @@ h3 {
 }
 
 .cta-button:hover {
-    background-color: #1b6fa0;  /* Slightly darker shade for hover */
+    background-color: #1b6fa0;
 }
 
 .cta-button:disabled {
@@ -209,10 +209,8 @@ h3 {
 }
 
 .sample-button:hover {
-    background-color: #d68910 !important; /* Darker shade for hover */
-}
+    background-color: #d68910 !important;}
 
-/* Flex container for the benefits */
 .benefits {
     display: flex;
     gap: 1rem; /* Space between each box */

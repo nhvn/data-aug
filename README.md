@@ -81,8 +81,7 @@ AugmentAI allows users to upload image datasets and augment them using generativ
    - Click on "Clone"
 
 2. Start the Application:
-   - In Workbench, go to Environment > Applications
-   - Click on AugmentAI to launch the application
+   - In Workbench, click on "Open AugmentAI" (or alternatively, go to Environment > Applications > AugmentAI)
    - The application will open automatically in your default browser
 
 ---
