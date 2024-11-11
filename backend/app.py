@@ -15,24 +15,24 @@ sys.stdout.flush()
 with open('/project/debug.log', 'w') as f:
     f.write("=== Debug Directory Information ===\n")
     f.write(f"Current directory: {os.getcwd()}\n")
-    
+
     # Workbench project structure
     PROJECT_DIR = Path('/project')
     f.write(f"PROJECT_DIR: {PROJECT_DIR}\n")
-    
+
     BACKEND_DIR = PROJECT_DIR / 'backend'
     SRC_DIR = BACKEND_DIR / 'src'
     STATIC_DIR = PROJECT_DIR / 'frontend/static'
     f.write(f"STATIC_DIR path: {STATIC_DIR}\n")
     f.write(f"STATIC_DIR exists: {STATIC_DIR.exists()}\n")
-    
+
     if STATIC_DIR.exists():
         f.write(f"STATIC_DIR contents: {list(STATIC_DIR.iterdir())}\n")
         images_dir = STATIC_DIR / 'images'
         f.write(f"Images directory exists: {images_dir.exists()}\n")
         if images_dir.exists():
             f.write(f"Images directory contents: {list(images_dir.iterdir())}\n")
-    
+
     f.write("================================\n")
 
 # Workbench project structure
@@ -123,28 +123,23 @@ image_handler = ImageHandler(use_api=True)  # Set to False for GAN
 def generate_image():
     if 'files[]' not in request.files:
         return jsonify({"error": "No file part"}), 400
-    
+
     files = request.files.getlist('files[]')
-    MAX_FILES = 10
-    
-    if len(files) > MAX_FILES:
-        return jsonify({"error": f"Maximum {MAX_FILES} files allowed"}), 400
-    
+
     if not files or files[0].filename == '':
         return jsonify({"error": "No selected file"}), 400
-    
+
     generated_images = []
-    
+
     for file in files:
         if file and file.filename.lower().endswith(('.png', '.jpg', '.jpeg')):
             try:
                 uploaded_image = Image.open(file)
-                # In your app.py, update this line:
-                generated_image_bytes = image_handler.generate_from_image(uploaded_image)  # Changed from generate_image
+                generated_image_bytes = image_handler.generate_image(uploaded_image)
                 generated_images.append(generated_image_bytes)
             except Exception as e:
                 return jsonify({"error": str(e)}), 500
-    
+
     if len(generated_images) == 1:
         return send_file(
             io.BytesIO(generated_images[0]),
@@ -158,7 +153,7 @@ def generate_image():
             for i, img_bytes in enumerate(generated_images):
                 zf.writestr(f'generated_image_{i+1}.png', img_bytes)
         memory_file.seek(0)
-        
+
         return send_file(
             memory_file,
             mimetype='application/zip',
