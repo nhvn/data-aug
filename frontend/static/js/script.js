@@ -5,9 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorMessage = document.querySelector(".error-message");
     const submitButton = document.querySelector("button[type='submit']");
     const dropArea = document.getElementById('drop-area');
-
-    // Remove duplicate declaration
-    // const submitButton = document.querySelector("button[type='submit']"); 
+    const loadingOverlay = document.getElementById('loading-overlay');
 
     function updateSubmitButton() {
         const hasFiles = fileInput.files.length > 0;
@@ -15,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
         submitButton.disabled = !hasFiles;
     }
 
-    // Remove duplicate fileInput event listener
     if (fileInput) {
         fileInput.addEventListener('change', function(e) {
             const files = e.target.files;
@@ -23,11 +20,6 @@ document.addEventListener("DOMContentLoaded", function () {
             updateSubmitButton();
         });
     }
-
-    // Remove these floating lines as they're not in a function
-    // fileInput.files = fileList.files;
-    // displayFileNames(fileList.files);
-    // updateSubmitButton();
 
     // Drop area functionality
     if (dropArea) {
@@ -149,6 +141,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             errorMessage.textContent = "";
+            
+            // Show loading overlay before form submission
+            loadingOverlay.classList.remove('hidden');
+
+            // Hide loading overlay after 5 seconds (adjust time as needed)
+            setTimeout(() => {
+                loadingOverlay.classList.add('hidden');
+            }, 10000); // 5000ms = 5 seconds
+
+            // The form will submit normally
         });
     }
 
