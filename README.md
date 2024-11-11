@@ -123,7 +123,7 @@ This project is specifically designed for NVIDIA AI Workbench. Key configuration
 
 ## Contact
 
-If you're a judge and need access or have questions, please reach out.
+If you're a judge and need access or have questions, please reach out and I will respond as soon as possible.
  
 ---
 

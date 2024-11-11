@@ -510,6 +510,9 @@ h3 {
     .background-container {
         height: 20em;
     }
+    .container, .background-container {
+    margin: 1rem;
+    }
 }
 
 /* For larger screens, like desktops */
