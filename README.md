@@ -56,17 +56,13 @@ This project implements two approaches for image generation:
 - Git installed
 
 ### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/nhvn/data-aug.git
-   cd data-aug
+1. Open NVIDIA AI Workbench
+- Select "Clone Project"
+```bash
+    https://github.com/nhvn/data-aug.git
+- Click on "Clone"
 
-2. Open in NVIDIA AI Workbench:
-- Launch NVIDIA AI Workbench
-- Select "Open Project"
-- Navigate to the cloned data-aug directory
-
-3. Start the Application:
+2. Start the Application:
 - In Workbench, go to Environment > Applications
 - Click on AugmentAI to launch the application
 - The application will open automatically in your default browser
@@ -84,8 +80,7 @@ This project implements two approaches for image generation:
 1. Launch through NVIDIA AI Workbench
 2. Navigate to the "Upload" page or click on 'Augment' in the navigation bar
 3. Upload images (folder or individual files)
-4. Click 'Augment' to generate variations
-5. Download generated images
+4. Click 'Augment' to generate variations and download generated images
 
 ---
 
