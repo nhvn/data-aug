@@ -4,12 +4,20 @@
 <div class="container">
     <h2>Upload Images for Augmentation</h2>
     <div id="drop-area" class="file-drop-area">
+<!-- Modify your form section to include the clear button -->
         <form action="/projects/data-aug/applications/AugmentAI/generate" method="post" enctype="multipart/form-data">
             <p>Drag and drop files or folder here or</p>
             <input type="file" id="fileElem" name="files[]" accept="image/png, image/jpeg, image/jpg" multiple webkitdirectory hidden>
-            <label class="cta-button" for="fileElem">Choose Folder</label>
-            <button id="load-samples" type="button" class="cta-button sample-button">Load Samples</button>
-            <p class="file-name"></p>
+            <div class="button-group">
+                <label class="cta-button" for="fileElem">Choose Folder</label>
+                <button id="load-samples" type="button" class="cta-button sample-button">Load Samples</button>
+            </div>
+            <div class="file-info">
+                <p class="file-name"></p>
+                <button type="button" id="clear-files" class="clear-button hidden">
+                    <span>×</span>
+                </button>
+            </div>
             <p id="statusMessage" class="hidden"></p>
             <button type="submit" class="cta-button" style="display: none;">Augment</button>
         </form>

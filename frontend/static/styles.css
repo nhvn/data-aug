@@ -298,7 +298,7 @@ h3 {
 }
 
 .file-name {
-    margin-top: 0.5rem;
+    /* margin-top: 0.5rem; */
     font-style: italic;
 }
 
@@ -437,6 +437,43 @@ h3 {
 
 .hidden {
     display: none;
+}
+
+.file-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.clear-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none; /* Remove background completely */
+    color: black;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.3s ease; /* Changed to color transition instead of background */
+}
+
+.clear-button:hover {
+    color: red;
+}
+
+.clear-button span {
+    display: block;
+    margin-top: -10px;
+}
+
+.hidden {
+    display: none !important;
 }
 
 #statusMessage {

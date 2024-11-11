@@ -7,23 +7,36 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropArea = document.getElementById('drop-area');
     const loadingOverlay = document.getElementById('loading-overlay');
     const sampleButton = document.getElementById('load-samples');
-    // Add handler for sample data loading
+    const clearButton = document.getElementById('clear-files');
+
     if (sampleButton) {
         sampleButton.addEventListener('click', async function() {
             try {
-                // Fetch sample images from your static folder
+                // Sample images paths
                 const sampleImages = [
-                    '/static/samples/sample1.jpg',
-                    '/static/samples/sample2.jpg',
-                    '/static/samples/sample3.jpg'
+                    '/projects/data-aug/applications/AugmentAI/static/samples/sample1.jpg',
+                    '/projects/data-aug/applications/AugmentAI/static/samples/sample2.jpg',
+                    '/projects/data-aug/applications/AugmentAI/static/samples/sample3.jpg'
                 ];
                 
                 const fileList = new DataTransfer();
                 
                 for (const imagePath of sampleImages) {
                     const response = await fetch(imagePath);
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${imagePath}`);
+                    }
                     const blob = await response.blob();
-                    const file = new File([blob], imagePath.split('/').pop(), { type: blob.type });
+                    
+                    // Create a new file with explicit image MIME type
+                    const file = new File(
+                        [blob], 
+                        imagePath.split('/').pop(), 
+                        { 
+                            type: 'image/jpeg',  // Explicitly set MIME type
+                            lastModified: new Date().getTime()
+                        }
+                    );
                     fileList.items.add(file);
                 }
                 
@@ -37,6 +50,27 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
+
+    function clearFiles() {
+        if (fileInput) {
+            // Clear the file input
+            fileInput.value = '';
+            // Create empty FileList
+            const emptyFileList = new DataTransfer();
+            fileInput.files = emptyFileList.files;
+            // Update display
+            fileName.textContent = '';
+            // Hide the clear button
+            clearButton.classList.add('hidden');
+            // Update submit button state
+            updateSubmitButton();
+        }
+    }
+
+    if (clearButton) {
+        clearButton.addEventListener('click', clearFiles);
+    }
+    
     function updateSubmitButton() {
         const hasFiles = fileInput.files.length > 0;
         submitButton.style.display = hasFiles ? 'inline-block' : 'none';
@@ -147,10 +181,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (fileName && files) {
             if (files.length === 0) {
                 fileName.textContent = "";
+                clearButton.classList.add('hidden'); // Hide clear button
             } else if (files.length === 1) {
                 fileName.textContent = files[0].name;
+                clearButton.classList.remove('hidden'); // Show clear button
             } else {
                 fileName.textContent = `${files.length} files selected`;
+                clearButton.classList.remove('hidden'); // Show clear button
             }
             errorMessage.textContent = "";
         }
@@ -175,12 +212,10 @@ document.addEventListener("DOMContentLoaded", function () {
             // Show loading overlay before form submission
             loadingOverlay.classList.remove('hidden');
 
-            // Hide loading overlay after 5 seconds (adjust time as needed)
+            // Hide loading overlay after 10 seconds
             setTimeout(() => {
                 loadingOverlay.classList.add('hidden');
-            }, 10000); // 5000ms = 5 seconds
-
-            // The form will submit normally
+            }, 10000);
         });
     }
 
