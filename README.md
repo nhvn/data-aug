@@ -60,6 +60,7 @@ This project implements two approaches for image generation:
 - Select "Clone Project"
 ```bash
     https://github.com/nhvn/data-aug.git
+
 - Click on "Clone"
 
 2. Start the Application:
