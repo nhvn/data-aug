@@ -6,64 +6,56 @@ This project provides an image augmentation tool using **Generative AI** models,
 
 ## Description
 
-AugmentAI allows users to upload image datasets and augment them using generative models. The system uses pre-trained **Generative AI** models (GANs) to generate synthetic images that can enhance machine learning model performance. Built specifically for **NVIDIA AI Workbench**, the application utilizes GPU acceleration for fast and efficient image processing.
+AugmentAI allows users to upload image datasets and augment them using generative models. The system uses Stability AI API for high-quality image generation and falls back to a local GAN model when needed. Built specifically for **NVIDIA AI Workbench**, the application utilizes GPU acceleration for fast and efficient image processing.
 
 ---
 
 ## Features
 
-- **Image Upload**: Upload folders of images for augmentation
-- **Data Augmentation**: Generate synthetic variations of uploaded images using GANs
-- **GPU Acceleration**: Utilize NVIDIA AI Workbench's GPU capabilities
-- **Web Interface**: User-friendly interface for easy interaction
-- **Instant Download**: Augmented images available for immediate download
+- **Infrastructure**
+  - Built specifically for NVIDIA AI Workbench
+  - Easy deployment and management
+  - No complex setup needed
+
+- **User Experience**
+  - Simple, clean interface
+  - Folder upload support
+  - Maintains original image dimensions
+  - Direct result downloads
+
+- **Future Potential**
+  - Framework ready for multi-modal expansion
+  - Could integrate multiple AI models
+  - Potential for text and tabular data support
 
 ---
 
-<!-- ## Project Structure
-data-aug/
-├── backend/
-│   ├── src/
-│   │   └── gan_handler.py
-│   ├── templates/
-│   └── app.py
-├── frontend/
-│   └── static/
-│       ├── images/
-│       ├── js/
-│       └── styles.css
-├── models/
-├── .project/
-│   └── spec.yaml
-└── README.md -->
+## Image Generation Approaches
 
-## System Requirements
+This project implements two approaches for image generation:
 
-### Hardware Requirements
-- NVIDIA GPU with CUDA support
-- Minimum 8GB RAM
-- 20GB free disk space
+### 1. Primary Service (Stability AI API)
+- High-quality image generation
+- Maintains original image dimensions
+- Production-ready results
+- Faster inference times
 
-### Software Requirements
-- NVIDIA AI Workbench (version 0.53.27 or higher)
-- Docker Desktop (version 4.24.0 or higher)
-- NVIDIA GPU Driver (version 535 or higher)
-- Operating System:
-  - Windows 11/10 with WSL2
-  - Ubuntu 20.04 or higher
-  - macOS 12.0 or higher
+### 2. Fallback Service (Local GAN)
+- Custom GAN model trained on nature dataset
+- 64x64 pixel output
+- CPU-based inference
+- Automatically activated if API is unavailable
 
-### Environment Variables
-The following environment variables are configured in spec.yaml:
-```yaml
-environment:
-  variables:
-    PYTHONPATH: /project
-    FLASK_ENV: development
-    PYTHONUNBUFFERED: "1"
+---
 
-## Running in AI Workbench
+## Installation & Setup
 
+### Prerequisites
+- NVIDIA AI Workbench installed and configured
+- Docker Desktop running
+- Git installed
+
+### Steps
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/data-aug.git
@@ -73,7 +65,6 @@ environment:
 - Launch NVIDIA AI Workbench
 - Select "Open Project"
 - Navigate to the cloned data-aug directory
-- The project will automatically configure the necessary environment
 
 3. Start the Application:
 - In Workbench, go to Environment > Applications
@@ -86,76 +77,26 @@ environment:
 
 - The application is avaliable at: http://localhost:10000/projects/data-aug/applications/AugmentAI/
 
-## NVIDIA AI Workbench Integration
-
-- Environment Management: Workbench handles all environment setup and dependencies
-- GPU Acceleration: Automatic GPU utilization for model inference
-- Application Deployment: Seamless deployment through Workbench's application management
-- Resource Management: Efficient handling of GPU and memory resources
-
 ---
 
 ## Using the Application
 
-1. Launch the application through NVIDIA AI Workbench
-2. Click "Augment" in the navigation bar
-3. Upload a folder of images (3-5 images recommended)
-4. Click 'Augment' to generate synthetic variations
-5. Download the augmented images
+1. Launch through NVIDIA AI Workbench
+2. Navigate to the "Upload" page or click on 'Augment' in the navigation bar
+3. Upload images (folder or individual files)
+4. Click 'Augment' to generate variations
+5. Download generated images
 
 ---
 
-## Image Generation Approaches
+## Limitations and Guidelines
 
-This project implements two approaches for image generation:
-
-### 1. Local GAN Implementation
-- Custom GAN model for image augmentation
-- Trained on a 'natures' dataset from Kaggle to demonstrate ML concepts
-- Suitable for development and testing
-- CPU-based inference for accessibility
-
-### 2. API Integration (Stability AI)
-- High-quality image generation
-- 512x512 pixel output
-- Production-ready results
-- Faster inference times
-
-### Configuration
-The system can switch between approaches:
-```python
-# Use API (high quality)
-image_handler = ImageHandler(use_api=True)
-
-# Use local GAN (demonstration)
-image_handler = ImageHandler(use_api=False)
-
-## Known Limitations
-
-- Currently supports folder upload only (single image upload coming soon)
-- File drag-and-drop functionality is under development
-- Upload status indicator is in development
-
----
-
-## Future Enhancements
-
-- Single image upload support
-- Drag-and-drop functionality
-- Upload progress indicator
-- Additional augmentation options
-- Enhanced GPU optimization
-- Batch processing improvements
-
----
-
-## Development Notes
-
-This project is specifically designed for NVIDIA AI Workbench. Key configurations include:
-- spec.yaml configuration for Workbench integration
-- PU resource allocation
-- Application routing through Workbench proxy
-- Static file serving optimization
+- Supported formats: PNG, JPG, JPEG
+- Maximum 10 files per upload
+- Maximum total upload size: 16MB
+- Maximum image dimensions: 1024x1024 pixels (larger images automatically resized)
+- Folder and file drag-and-drop supported
+- Upload status indication provided
 
 ---
 
@@ -165,9 +106,19 @@ If you encounter issues:
 1. Ensure Docker Desktop is running
 2. Verify NVIDIA AI Workbench is properly installed
 3. Check the application logs in Workbench
-4. Ensure your GPU drivers are up to date
+4. Ensure your API key is properly configured (if using Stability AI)
 5. Try restarting the application through Workbench
 
+---
+
+## Development Notes
+
+This project is specifically designed for NVIDIA AI Workbench. Key configurations include:
+- NVIDIA AI Workbench integration
+- Stability AI API integration
+- Local GAN model fallback
+- Static file serving optimization
+ 
 ---
 
 ## Contact
