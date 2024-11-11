@@ -8,6 +8,7 @@
             <p>Drag and drop files or folder here or</p>
             <input type="file" id="fileElem" name="files[]" accept="image/png, image/jpeg, image/jpg" multiple webkitdirectory hidden>
             <label class="cta-button" for="fileElem">Choose Folder</label>
+            <button id="load-samples" type="button" class="cta-button sample-button">Load Samples</button>
             <p class="file-name"></p>
             <p id="statusMessage" class="hidden"></p>
             <button type="submit" class="cta-button" style="display: none;">Augment</button>
@@ -31,7 +32,6 @@
     <p>⚠️ Disclaimer: If the API is unavailable or credits are depleted, the system will automatically fall back to a local GAN model trained on nature images. Please note that this may result in lower quality and limited variety in the generated images.</p>
     <p class="error-message"></p>
 </div>
-
 <div class="container coming-soon">
     <h2>Potential Features Coming Soon</h2>
     <div class="upcoming-features">

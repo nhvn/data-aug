@@ -6,7 +6,37 @@ document.addEventListener("DOMContentLoaded", function () {
     const submitButton = document.querySelector("button[type='submit']");
     const dropArea = document.getElementById('drop-area');
     const loadingOverlay = document.getElementById('loading-overlay');
-
+    const sampleButton = document.getElementById('load-samples');
+    // Add handler for sample data loading
+    if (sampleButton) {
+        sampleButton.addEventListener('click', async function() {
+            try {
+                // Fetch sample images from your static folder
+                const sampleImages = [
+                    '/static/samples/sample1.jpg',
+                    '/static/samples/sample2.jpg',
+                    '/static/samples/sample3.jpg'
+                ];
+                
+                const fileList = new DataTransfer();
+                
+                for (const imagePath of sampleImages) {
+                    const response = await fetch(imagePath);
+                    const blob = await response.blob();
+                    const file = new File([blob], imagePath.split('/').pop(), { type: blob.type });
+                    fileList.items.add(file);
+                }
+                
+                fileInput.files = fileList.files;
+                displayFileNames(fileInput.files);
+                updateSubmitButton();
+                
+            } catch (error) {
+                console.error('Error loading sample images:', error);
+                errorMessage.textContent = "Error loading sample images. Please try uploading your own.";
+            }
+        });
+    }
     function updateSubmitButton() {
         const hasFiles = fileInput.files.length > 0;
         submitButton.style.display = hasFiles ? 'inline-block' : 'none';

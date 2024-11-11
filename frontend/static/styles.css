@@ -196,9 +196,21 @@ h3 {
     background-color: #e0e0e0;
 }
 
-/* .augment-data-container {
-    margin-top: 1rem;
-} */
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.sample-button {
+    background-color: #f4a261 !important; /* Warm yellow color */
+    color: white !important;
+}
+
+.sample-button:hover {
+    background-color: #d68910 !important; /* Darker shade for hover */
+}
 
 /* Flex container for the benefits */
 .benefits {
