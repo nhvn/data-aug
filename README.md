@@ -1,6 +1,8 @@
 # AugmentAI - Data Augmentation Tool
 This project provides an image augmentation tool using **Generative AI** models, specifically designed and optimized for **NVIDIA AI Workbench**. It leverages GPU acceleration for efficient data augmentation and synthetic image generation.
 
+---
+
 ## Table of Contents
 - [Description](#description)
 - [Features](#features)
@@ -19,7 +21,6 @@ This project provides an image augmentation tool using **Generative AI** models,
 - [Blog Post](#blog-post)
 
 ---
-[Rest of your README remains exactly the same]
 
 ## Description
 
