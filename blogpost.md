@@ -1,4 +1,4 @@
-# AugmentAI: Enhancing Machine Learning Workflows with Generative AI
+# Enhancing Image Augmentation for Machine Learning with AugmentAI
 
 ## Introduction
 **AugmentAI** is a cutting-edge project designed to improve machine learning by providing high-quality synthetic data through image augmentation. This tool generates realistic and diverse images from existing datasets, helping users to overcome the challenge of limited data and improve the performance of their models. Data augmentation is especially critical in fields such as environmental monitoring and remote sensing, where high-quality image data is essential for model accuracy and reliability.
