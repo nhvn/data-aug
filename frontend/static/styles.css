@@ -445,6 +445,36 @@ h3 {
     margin-top: 10px;
 }
 
+.sample-images-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.sample-image-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    /* padding: 10px; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    text-align: center;
+}
+
+.sample-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* This will maintain aspect ratio while covering the space */
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.image-caption {
+    color: var(--text-color);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
 .upload-limits {
     background-color: #f8f9fa;
     border-radius: 8px;

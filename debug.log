@@ -3,7 +3,7 @@ Current directory: /project
 PROJECT_DIR: /project
 STATIC_DIR path: /project/frontend/static
 STATIC_DIR exists: True
-STATIC_DIR contents: [PosixPath('/project/frontend/static/styles.css'), PosixPath('/project/frontend/static/images'), PosixPath('/project/frontend/static/js')]
+STATIC_DIR contents: [PosixPath('/project/frontend/static/styles.css'), PosixPath('/project/frontend/static/images'), PosixPath('/project/frontend/static/js'), PosixPath('/project/frontend/static/samples'), PosixPath('/project/frontend/static/sample1.jpg'), PosixPath('/project/frontend/static/sample3.jpg'), PosixPath('/project/frontend/static/sample2.jpg'), PosixPath('/project/frontend/static/.ipynb_checkpoints')]
 Images directory exists: True
 Images directory contents: [PosixPath('/project/frontend/static/images/logoWord.png'), PosixPath('/project/frontend/static/images/introbackground.jpg'), PosixPath('/project/frontend/static/images/aug-logo.png'), PosixPath('/project/frontend/static/images/hackaiBanner.png'), PosixPath('/project/frontend/static/images/background-image.png')]
 ================================
