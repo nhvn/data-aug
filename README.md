@@ -23,13 +23,11 @@ This project provides an image augmentation tool using **Generative AI** models,
 ---
 
 ## Description
-
 AugmentAI allows users to upload image datasets and augment them using generative models. The system uses Stability AI API for high-quality image generation and falls back to a local GAN model when needed. Built specifically for **NVIDIA AI Workbench**, the application utilizes GPU acceleration for fast and efficient image processing.
 
 ---
 
 ## Features
-
 - **Infrastructure**
   - Built specifically for NVIDIA AI Workbench
   - Easy deployment and management
@@ -77,30 +75,42 @@ AugmentAI allows users to upload image datasets and augment them using generativ
 ### Steps
 1. Open NVIDIA AI Workbench
    - Select "Clone Project"
-   - Enter `https://github.com/nhvn/data-aug.git`
-   - Click on "Clone"
+   - Drop in `https://github.com/nhvn/data-aug.git`, leave the default path, and click "Clone"
+  ![Clone Project](frontend/static/images/clone-project.png)
 
 2. Start the Application:
    - In Workbench, click on "Open AugmentAI" (or alternatively, go to Environment > Applications > AugmentAI)
+  ![Workbench launching AugmentAI](frontend/static/images/openAug.png)
    - The application will open automatically in your default browser
 
 ---
+
 ## Accessing the Application
 The application is available at: `http://localhost:10000/projects/data-aug/applications/AugmentAI/`
 
 ---
 
 ## Using the Application
+1. Ensure the app is launched through NVIDIA AI Workbench
+2. Click on 'Augment' in the navigation bar to navigate to the "Upload" page
+  ![Navigating to Augment Page](frontend/static/images/augPage.png)
+4. Upload images in any of these ways:
+  - Click "Load Samples" to use provided test images
+  - Drag and drop a folder or individual images
+  - Click "Choose Folder" to select files from your computer
+  ![Upload Methods](frontend/static/images/upload.png)
 
-1. Launch through NVIDIA AI Workbench
-2. Navigate to the "Upload" page or click on 'Augment' in the navigation bar
-3. Upload images (folder or individual files)
-4. Click 'Augment' to generate variations and download generated images
+4. Generate augmented images:
+  - Click "Augment" to process the images
+  ![Augment Button](frontend/static/images/augButton.png)
+  - Wait for processing to complete
+  - Files will automatically download as a ZIP
+
+Note: If the API is unavailable, the system will automatically fall back to a local model (may result in lower quality outputs).
 
 ---
 
 ## Limitations and Guidelines
-
 - Supported formats: PNG, JPG, JPEG
 - Maximum 10 files per upload
 - Maximum total upload size: 16MB
@@ -111,7 +121,6 @@ The application is available at: `http://localhost:10000/projects/data-aug/appli
 ---
 
 ## Troubleshooting
-
 If you encounter issues:
 1. Ensure Docker Desktop is running
 2. Verify NVIDIA AI Workbench is properly installed
@@ -122,21 +131,18 @@ If you encounter issues:
 ---
 
 ## Development Notes
-
 This project is specifically designed for NVIDIA AI Workbench. Key configurations include:
 - NVIDIA AI Workbench integration
 - Stability AI API integration
 - Local GAN model fallback
 - Static file serving optimization
- 
+
 ---
 
 ## Contact
-
 If you're a judge and need access or have questions, please reach out and I will respond as soon as possible.
- 
+
 ---
 
 ## Blog Post
-
 Read the full blog post [here](./blogpost.md).
