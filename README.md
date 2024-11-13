@@ -1,6 +1,6 @@
 # AugmentAI - Data Augmentation Tool
 ![AugmentAI Cover](frontend/static/images/augCover.png)
-This project provides an image augmentation tool using **Generative AI** models, specifically designed and optimized for **NVIDIA AI Workbench**.
+#### This project provides an image augmentation tool using **Generative AI** models, specifically designed and optimized for **NVIDIA AI Workbench**.
 ---
 
 ## Table of Contents
@@ -49,7 +49,10 @@ AugmentAI allows users to upload image datasets and augment them using generativ
 ## Environment Setup
 
 ### Required Environment Variables
-- `STABILITY_API_KEY`: Required for high-quality image generation. (A demonstration key is included in the project configuration)
+- `STABILITY_API_KEY`: Required for high-quality image generation (Default demo key included but has limited credits)
+  - Can be obtained from [Stability AI platform](https://platform.stability.ai/)
+  - Set in Workbench environment or `.env` file
+  - Note: System will fallback to local GAN if API is unavailable
 
 ### Service Levels
 - **Primary Service**: Uses Stability AI API
@@ -71,6 +74,13 @@ AugmentAI allows users to upload image datasets and augment them using generativ
 - NVIDIA AI Workbench installed and configured
 - Docker Desktop running
 - Git installed
+- System Requirements:
+  - 8GB RAM minimum
+  - 5GB free disk space
+- Software Versions:
+  - Docker Desktop 4.x or higher
+  - Git 2.x or higher
+  - Python 3.8+ (handled by container)
 
 ### Steps
 1. Open NVIDIA AI Workbench
