@@ -27,6 +27,11 @@ AugmentAI allows users to upload image datasets and augment them using generativ
 
 ---
 
+## Demo
+Watch the demonstration video [here](https://www.youtube.com/watch?v=acIyUkKU0uQ) to see AugmentAI in action, including setup in NVIDIA AI Workbench and usage examples.
+
+---
+
 ## Features
 - **Infrastructure**
   - Built specifically for NVIDIA AI Workbench
