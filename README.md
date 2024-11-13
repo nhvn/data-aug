@@ -1,6 +1,6 @@
 # AugmentAI - Data Augmentation Tool
 This project provides an image augmentation tool using **Generative AI** models, specifically designed and optimized for **NVIDIA AI Workbench**.
-
+![AugmentAI Cover](frontend/static/images/augCover.png)
 ---
 
 ## Table of Contents
