@@ -49,7 +49,7 @@ AugmentAI allows users to upload image datasets and augment them using generativ
 ## Environment Setup
 
 ### Required Environment Variables
-- `STABILITY_API_KEY`: Required for high-quality image generation (Default demo key included but has limited credits)
+- `STABILITY_API_KEY`: Required for high-quality image generation (Default demo key is included for the judges)
   - Can be obtained from [Stability AI platform](https://platform.stability.ai/)
   - Set in Workbench environment or `.env` file
   - Note: System will fallback to local GAN if API is unavailable
