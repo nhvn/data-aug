@@ -26,5 +26,3 @@ While AugmentAI successfully addresses the immediate need for image augmentation
 
 ## Conclusion
 AugmentAI demonstrates how modern tools and technologies can be combined to create a practical solution for machine learning data augmentation. By leveraging NVIDIA AI Workbench for deployment, Stability AI for primary processing, and a local GAN for fallback, the platform provides a robust and user-friendly solution to the challenge of dataset enhancement. The project showcases the potential of hybrid approaches in creating reliable, accessible tools for machine learning practitioners.
-
-*Check out the [AugmentAI GitHub repository](https://github.com/nhvn/data-aug) for more details.*
